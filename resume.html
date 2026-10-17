@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume · Braden Agpoon</title>
+<meta name="description" content="Braden Agpoon, Research Director. Seven years of custom survey research, advanced quantitative methods, and self-built AI tooling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#FAFAF7; --ink:#0E0E0E; --text:#2E2E2C; --muted:#6A6A66; --rule:#D8D8D3; --accent:#2A46C8; --on-accent:#FAFAF7;
+  --sans:"Work Sans","Helvetica Neue",Arial,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121315; --ink:#EEEDE8; --text:#CFCFC9; --muted:#8F8F89; --rule:#2E2F32; --accent:#8C9BFF; --on-accent:#121315;
+}}
+:root[data-theme="dark"]{
+  --bg:#121315; --ink:#EEEDE8; --text:#CFCFC9; --muted:#8F8F89; --rule:#2E2F32; --accent:#8C9BFF; --on-accent:#121315;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent)}
+a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+/* site nav */
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;border:1.5px solid var(--ink);padding:12px 16px;margin-top:32px;flex-wrap:wrap}
+.nav .brand{font-family:var(--mono);font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.nav .brand a{color:inherit;border:0}
+.nav .brand span{color:var(--muted);text-transform:none;letter-spacing:.02em}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.nav li a{white-space:nowrap;color:var(--ink);padding:4px 0;display:inline-block;border:0}
+.nav li a.on{background:var(--accent);color:var(--on-accent);padding:4px 9px}
+/* header */
+.head{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:48px;padding:56px 0 40px;align-items:end}
+@media (max-width:860px){.head{grid-template-columns:1fr;gap:28px}}
+h1{font-weight:600;font-size:clamp(38px,5.2vw,60px);line-height:1.02;letter-spacing:-.03em;margin:0 0 18px;text-wrap:balance}
+.lede{font-size:17px;line-height:1.5;max-width:640px;margin:0;text-wrap:pretty}
+.card{border:1.5px solid var(--ink);font-family:var(--mono);font-size:12.5px;line-height:1.7}
+.card div{padding:10px 14px;border-top:1px solid var(--rule)}
+.card div:first-child{border-top:0}
+.card .lab{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.4}
+.card a{border:0}
+.card a.pdf{display:inline-block;border:1px solid var(--accent);padding:3px 10px;margin-top:4px}
+.card a.pdf:hover{background:var(--accent);color:var(--on-accent)}
+/* sections */
+main{padding:0 0 120px}
+.sec{padding-top:36px}
+.sec-head{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:2px solid var(--ink);padding:6px 0 18px}
+.org{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;padding:18px 0;border-top:1px solid var(--rule)}
+.org:first-of-type{border-top:0;padding-top:0}
+.org-meta{display:flex;flex-direction:column;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;line-height:1.6}
+.org-name{color:var(--ink)}
+.roles{display:flex;flex-direction:column;gap:18px;min-width:0}
+.role-head{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+.role-title{margin:0;font-weight:600;font-size:17px;line-height:1.3;letter-spacing:-.01em}
+.dates{font-size:12px;color:var(--muted);white-space:nowrap}
+.role ul{margin:8px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.role li{font-size:14.5px;line-height:1.5;color:var(--text);text-wrap:pretty;padding-left:2px}
+.role li::marker{color:var(--muted)}
+.rows{display:grid;grid-template-columns:220px minmax(0,1fr);gap:8px 24px}
+.rows .lab{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);line-height:1.6;padding-top:2px}
+.rows .txt{font-size:14.5px;line-height:1.5;color:var(--text)}
+@media (max-width:860px){.org,.rows{grid-template-columns:1fr;gap:6px}.org-meta{flex-direction:row;flex-wrap:wrap;gap:0 12px}}
+footer{border-top:1.5px solid var(--ink);padding:20px 0 60px;color:var(--muted);font-family:var(--mono);font-size:12px;line-height:1.6}
+footer a{border:0}
+@media print{
+  :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#fff;--ink:#000;--text:#1a1a1a;--muted:#555;--rule:#bbb;--accent:#000;--on-accent:#fff}
+  html,body{background:#fff !important;color:#000}
+  a{color:inherit !important;border:0 !important}
+  .web-only{display:none}
+  .nav,footer,.card .print{display:none}
+  body{font-size:11.5px;line-height:1.4}
+  .wrap{max-width:none;padding:0}
+  .head{grid-template-columns:minmax(0,1fr) 230px;gap:28px;padding:0 0 14px}
+  h1{font-size:28px;margin-bottom:10px}
+  .lede{font-size:11.5px;max-width:none}
+  .card{font-size:10.5px;line-height:1.5}
+  .card div{padding:6px 10px}
+  .sec{padding-top:14px}
+  .sec-head{padding:4px 0 10px}
+  .org{grid-template-columns:170px minmax(0,1fr);gap:16px;padding:12px 0}
+  .org-meta{display:block}
+  .org-meta span{display:block}
+  .roles{gap:10px}
+  .role{break-inside:avoid}
+  .role-title{font-size:13px}
+  .dates{font-size:10.5px}
+  .role ul{gap:3px;margin-top:4px}
+  .role li{font-size:11px;line-height:1.4}
+  .rows{grid-template-columns:170px minmax(0,1fr);gap:4px 16px}
+  .rows .txt{font-size:11px}
+  a{border-bottom:0;color:var(--ink)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <div class="brand"><a href="./">Braden Agpoon</a> <span>/ research director</span></div>
+  <ul>
+    <li><a href="./resume.html" class="on" aria-current="page">Resume</a></li>
+    <li><a href="./project-history.html">Project History</a></li>
+    <li><a href="./process.html">Process</a></li>
+    <li><a href="./ai-tooling.html">AI Tooling</a></li>
+  </ul>
+</nav>
+
+<header class="head">
+  <div>
+    <h1>Braden Agpoon</h1>
+    <p class="lede">Research Director with seven years of custom survey research, leading each project <a href="./process.html">from the first client call through the final presentation</a> and managing a team of analysts. Strength in advanced quantitative methods including conjoint, MaxDiff, segmentation, pricing analysis, TURF, and driver models. Produces and executes custom research plans to generate bespoke datasets and distill them into senior stakeholder-facing deliverables that directly inform strategic decision-making. Building and iterating on AI tooling and workflows for designing, executing, and managing both the research process and my team of analysts across 20 to 25 live projects at a time. <a href="./ai-tooling.html" class="web-only">How it fits together.</a></p>
+  </div>
+  <div class="card">
+    <div><span class="lab">Location</span>Washington, DC</div>
+    <div><span class="lab">Email</span><a href="mailto:braden.agpoon@gmail.com">braden.agpoon@gmail.com</a></div>
+    <div class="print"><span class="lab">Print version</span><a class="pdf" href="./Agpoon-Resume.pdf">Download PDF</a></div>
+  </div>
+</header>
+
+<main>
+
+<section class="sec">
+  <div class="sec-head mono">Experience</div>
+  
+  <div class="org">
+    <div class="org-meta mono"><span class="org-name">Hanover Research</span><span class="muted">Arlington, VA</span></div>
+    <div class="roles">
+      <div class="role">
+        <div class="role-head"><h3 class="role-title">Research Director, Corporate Research</h3><span class="dates mono">Feb 2024 – Present</span></div>
+        
+      </div>
+      <div class="role">
+        <div class="role-head"><h3 class="role-title">Research Director (Acting)</h3><span class="dates mono">Dec 2022 – Feb 2024</span></div>
+        <ul><li>Manage 20 to 25 concurrent engagements, scoping each with the client, setting the schedule, and <a href="./process.html">driving each one through survey design, programming, fielding, analysis, and the final presentation</a>, in technically complex sectors, chiefly medical devices, building products and construction, industrial systems, and B2B software</li><li>Design and lead custom survey studies, <a href="./project-history.html">178 delivered since 2023</a>, spanning brand equity and tracking, attitude and usage, needs assessment, concept and message testing, path-to-purchase, customer satisfaction, and market sizing, along with advanced-methodology work in conjoint, MaxDiff, TURF, Gabor-Granger pricing, driver analysis, and k-means clustering segmentation</li><li>Draw on hundreds of senior-decision-maker engagements to calibrate each program's methodology, pacing, and deliverable shape, from executive briefs for the C-suite to tactical readouts for product teams to public-facing thought leadership</li><li>Manage and develop the analysts who execute those projects: assign the work, review every questionnaire and report before it reaches a client, and coach analysts from their first project to running engagements on their own</li><li>Transformed my team into a de facto AI incubator: put analysts on AI experiments inside live projects, directed what was tried, assessed efficacy and efficiency, and eventually packaged and rolled up the best processes into an overhaul of core processes department-wide</li><li>Built bespoke AI agents to augment my own research workflow at every stage: questionnaire parsing and review, automated survey programming, soft-launch data-quality monitoring, and analysis-report data and narrative checking. <a href="./ai-tooling.html" class="web-only">How they fit the process.</a></li></ul>
+      </div>
+      <div class="role">
+        <div class="role-head"><h3 class="role-title">Senior Survey Analyst, Corporate Research</h3><span class="dates mono">Mar 2022 – Dec 2022</span></div>
+        <ul><li>Served as lead analyst on the most complex client engagements while mentoring junior analysts</li><li>Implemented advanced quantitative methodologies including MaxDiff, conjoint analysis, and k-means clustering segmentation</li><li>Maintained data integrity through quality assessment protocols across the team portfolio</li></ul>
+      </div>
+      <div class="role">
+        <div class="role-head"><h3 class="role-title">Survey Analyst, Corporate Research</h3><span class="dates mono">Mar 2020 – Mar 2022</span></div>
+        <ul><li>Independently executed 100+ custom research projects across dozens of clients and industries</li><li>Managed the full project lifecycle from questionnaire design through analysis and client presentation</li></ul>
+      </div>
+      <div class="role">
+        <div class="role-head"><h3 class="role-title">Content Analyst, Corporate Research</h3><span class="dates mono">Mar 2019 – Mar 2020</span></div>
+        <ul><li>Conducted secondary research producing 40+ reports on market sizing and competitive intelligence</li><li>Designed interview guides and conducted qualitative in-depth interviews with industry stakeholders</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="org">
+    <div class="org-meta mono"><span class="org-name">Gridium Energy Solutions</span><span class="muted">Washington, DC</span></div>
+    <div class="roles">
+      <div class="role">
+        <div class="role-head"><h3 class="role-title">Energy Data Analyst, Engineering (part-time)</h3><span class="dates mono">Oct 2018 – Jul 2024</span></div>
+        <ul><li>Analyzed large-scale energy consumption data for commercial buildings, identifying trends and anomalies relevant to carbon reduction and cost optimization</li><li>Distilled complex analytical results into practical, decision-ready insights for non-technical building managers</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="org">
+    <div class="org-meta mono"><span class="org-name">Social Impact</span><span class="muted">Washington, DC</span></div>
+    <div class="roles">
+      <div class="role">
+        <div class="role-head"><h3 class="role-title">Senior Program Assistant, Impact Evaluation</h3><span class="dates mono">Jan 2017 – Jul 2018</span></div>
+        
+      </div>
+      <div class="role">
+        <div class="role-head"><h3 class="role-title">Program Assistant, Impact Evaluation</h3><span class="dates mono">Apr 2016 – Jan 2017</span></div>
+        <ul><li>Supported design and implementation of randomized controlled trials evaluating USAID development programs across Central America, East Africa, and the Pacific</li><li>Led training of 100+ field enumerators in Accra, Ghana for baseline data collection on an education evaluation</li><li>Produced data visualizations, policy briefs, and stakeholder presentations delivered to USAID and MCC officials</li><li>Managed quantitative data cleaning and analysis across three to five concurrent multi-country evaluations</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head mono">Education</div>
+  
+  <div class="org">
+    <div class="org-meta mono"><span class="org-name">University of California, San Diego</span><span class="muted">School of Global Policy and Strategy</span></div>
+    <div class="roles">
+      <div class="role">
+        <div class="role-head"><h3 class="role-title">Master of International Affairs</h3><span class="dates mono">June 2015</span></div>
+        <ul><li>Specializations: International Economics, Data Analysis, Latin America</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="org">
+    <div class="org-meta mono"><span class="org-name">University of Kansas</span><span class="muted">Lawrence, KS</span></div>
+    <div class="roles">
+      <div class="role">
+        <div class="role-head"><h3 class="role-title">B.A. International Studies and B.A. Spanish</h3><span class="dates mono">June 2013</span></div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-head mono">Additional</div>
+  <div class="rows"><div class="lab">Technical</div><div class="txt">AI agent development and workflow integration, Qualtrics, Python, Stata, Power BI</div><div class="lab">Languages</div><div class="txt">English (native), Spanish (professional working proficiency), Brazilian Portuguese (limited working proficiency)</div></div>
+</section>
+</main>
+
+<footer><a href="./">Home</a> · <a href="./project-history.html">Project History</a> · <a href="./process.html">Process</a> · <a href="./ai-tooling.html">AI Tooling</a></footer>
+</div>
+</body>
+</html>

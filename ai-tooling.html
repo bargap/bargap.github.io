@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Tooling · Braden Agpoon</title>
+<meta name="description" content="How Braden Agpoon built AI tooling into his own survey research process, with a worked example.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#FAFAF7; --ink:#0E0E0E; --text:#2E2E2C; --muted:#6A6A66; --rule:#D8D8D3; --accent:#2A46C8; --on-accent:#FAFAF7; --accent-tint:#E6E9F8;
+  --sans:"Work Sans","Helvetica Neue",Arial,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121315; --ink:#EEEDE8; --text:#CFCFC9; --muted:#8F8F89; --rule:#2E2F32; --accent:#8C9BFF; --on-accent:#121315; --accent-tint:#23284A;
+}}
+:root[data-theme="dark"]{
+  --bg:#121315; --ink:#EEEDE8; --text:#CFCFC9; --muted:#8F8F89; --rule:#2E2F32; --accent:#8C9BFF; --on-accent:#121315; --accent-tint:#23284A;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent)}
+a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.mono{font-family:var(--mono)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;border:1.5px solid var(--ink);padding:12px 16px;margin-top:32px;flex-wrap:wrap}
+.nav .brand{font-family:var(--mono);font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.nav .brand a{color:inherit;border:0}
+.nav .brand span{color:var(--muted);text-transform:none;letter-spacing:.02em}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.nav li a{color:var(--ink);padding:4px 0;display:inline-block;border:0}
+.nav li a.on{background:var(--accent);color:var(--on-accent);padding:4px 9px}
+.head{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:48px;padding:56px 0 40px;align-items:end}
+@media (max-width:860px){.head{grid-template-columns:1fr;gap:28px}}
+h1{font-weight:600;font-size:clamp(38px,5.2vw,60px);line-height:1.02;letter-spacing:-.03em;margin:0 0 18px;text-wrap:balance}
+.lede{font-size:17px;line-height:1.5;max-width:640px;margin:0 0 12px;text-wrap:pretty}
+.lede:last-child{margin-bottom:0}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5px;background:var(--ink);border:1.5px solid var(--ink);font-family:var(--mono)}
+.stat{background:var(--bg);padding:12px 14px}
+.stat b{display:block;font-weight:500;font-size:26px;line-height:1.2;font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.4}
+main{padding:0 0 96px}
+.sec{display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;padding:32px 0 44px;border-top:1.5px solid var(--ink)}
+.sec h2{margin:0;font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);line-height:1.5}
+.sec h3{margin:0 0 12px;font-weight:600;font-size:22px;line-height:1.25;letter-spacing:-.01em;text-wrap:balance}
+.body > p{margin:0 0 16px;max-width:680px;font-size:15px;line-height:1.6;color:var(--text);text-wrap:pretty}
+.body > p:last-child{margin-bottom:0}
+@media (max-width:760px){.sec{grid-template-columns:minmax(0,1fr);gap:10px}}
+.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:4px 0 22px}
+.part{border:1.5px solid var(--ink);padding:14px 16px 16px;background:var(--bg)}
+.part.model{border-color:var(--accent)}
+.part.me{background:var(--accent);border-color:var(--accent)}
+.part .name{font-weight:600;font-size:15px;margin:10px 0 8px;color:var(--ink)}
+.part p{margin:0;font-size:13.5px;line-height:1.5;color:var(--text)}
+.part.me .name,.part.me p{color:var(--on-accent)}
+@media (max-width:960px){.parts{grid-template-columns:1fr}}
+.badge{display:inline-block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;line-height:1;padding:4px 7px 3px;border:1.5px solid var(--ink);color:var(--ink);background:var(--bg)}
+.badge.model{border-color:var(--accent);color:var(--accent)}
+.badge.me{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+.part.me .badge,.step.me .badge{border-color:var(--on-accent);background:transparent;color:var(--on-accent)}
+.flow{margin:12px 0 28px}
+.row{display:grid;gap:14px}
+.row.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:760px){.row.cols-2{grid-template-columns:minmax(0,1fr)}}
+.phase{display:flex;flex-direction:column;min-width:0}
+.ph-head{border-top:2px solid var(--ink);padding:8px 0 10px}
+.ph-name{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.ph-blurb{font-size:13.5px;color:var(--muted);margin-top:2px}
+.join{display:block;width:100%;height:28px;margin:6px 0;color:var(--muted)}
+@media (max-width:760px){.join{height:20px}}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;flex:1}
+.step{border:1.5px solid var(--ink);padding:12px 16px 14px;background:var(--bg);min-width:0}
+.step.model{border-color:var(--accent)}
+.step.me{background:var(--accent);border-color:var(--accent)}
+.s-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.s-head .n{font-size:15px;color:var(--muted);letter-spacing:-.01em}
+.step .name{font-weight:600;font-size:15px;margin:0 0 4px;color:var(--ink)}
+.step p{margin:0;font-size:14px;line-height:1.55;color:var(--text);text-wrap:pretty}
+.step.me .n,.step.me .name,.step.me p{color:var(--on-accent)}
+.patterns{list-style:none;margin:6px 0 22px;padding:0;max-width:860px}
+.pattern{display:grid;grid-template-columns:300px minmax(0,1fr);gap:24px;padding:16px 0;border-top:1px solid var(--rule)}
+.pattern:last-child{border-bottom:1px solid var(--rule)}
+.pattern .name{font-weight:600;font-size:16px;margin:0 0 10px;color:var(--ink)}
+.seq{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.seq .arr{font-size:12px;color:var(--muted)}
+.p-body p{margin:0 0 8px;font-size:14.5px;line-height:1.55;color:var(--text);text-wrap:pretty}
+.see{font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:760px){.pattern{grid-template-columns:minmax(0,1fr);gap:8px}}
+.step{scroll-margin-top:24px}
+.step:target{outline:2px solid var(--accent);outline-offset:3px}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.sample{margin:12px 0 0}
+.sample figcaption{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 5px}
+.sample pre{margin:0;padding:10px 12px;background:color-mix(in srgb,var(--ink) 5%,var(--bg));border-left:2px solid var(--rule);overflow-x:auto;font-family:var(--mono);font-size:12px;line-height:1.55;color:var(--ink)}
+.step.model .sample pre{border-left-color:var(--accent)}
+.step.me .sample figcaption{color:var(--on-accent);opacity:.85}
+.step.me .sample pre{background:var(--bg);color:var(--ink);border-left-color:var(--on-accent)}
+.sample mark{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--ink);padding:0;outline:1px solid var(--accent)}
+.compare{overflow-x:auto;margin:0 0 24px}
+.compare table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.5;min-width:520px}
+.compare th,.compare td{text-align:left;vertical-align:top;padding:10px 14px 10px 0;border-top:1px solid var(--rule)}
+.compare thead th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:2px solid var(--ink)}
+.compare tbody th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);width:140px;padding-top:12px}
+.compare td{color:var(--text)}
+.compare td:last-child{color:var(--ink);font-weight:500}
+/* Phones: each row becomes a small block, labelled, so the "with the tooling" column never scrolls off. */
+@media (max-width:600px){
+  .compare table{min-width:0}
+  .compare thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .compare tr{display:block;border-top:1px solid var(--rule);padding:10px 0}
+  .compare tr:first-child{border-top:2px solid var(--ink)}
+  .compare th,.compare td{display:block;border:0;padding:2px 0}
+  .compare tbody th{width:auto;padding:0 0 4px}
+  .compare td::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+}
+footer{padding:0 0 48px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+footer a{border:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <div class="brand"><a href="./">Braden Agpoon</a> <span>/ research director</span></div>
+  <ul>
+    <li><a href="./resume.html">Resume</a></li>
+    <li><a href="./project-history.html">Project History</a></li>
+    <li><a href="./process.html">Process</a></li>
+    <li><a href="./ai-tooling.html" class="on" aria-current="page">AI Tooling</a></li>
+  </ul>
+</nav>
+
+<header class="head">
+  <div>
+    <h1>AI Tooling</h1>
+    <p class="lede">Since December 2025 I've been building my own AI tooling into how I run research, testing it on live client projects as I go. Nobody asked me to. No timeline or quality bar was allowed to slip, and only what held up on a real project stayed.</p>
+  </div>
+  <div class="stats"><div class="stat"><b>600+</b><span>commits since December 2025</span></div><div class="stat"><b>4,000+</b><span>automated tests</span></div><div class="stat"><b>36</b><span>skills: workflows the AI follows</span></div><div class="stat"><b>20+</b><span>script packages</span></div></div>
+</header>
+
+<main>
+  
+  <section class="sec">
+    <h2 class="mono">Building blocks</h2>
+    <div class="body">
+      <h3>Code, model, me</h3>
+      <p>Every tool splits the work three ways, each part used only for what it does best.</p>
+      <div class="parts"><div class="part code">
+      <span class="badge code mono">Code</span><div class="name">Anything with a right answer</div><p>Reading documents, comparing versions, checking survey logic, running every path a respondent could take. Code gives the same result every time and costs almost nothing to rerun.</p></div><div class="part model">
+      <span class="badge model mono">Model</span><div class="name">Anything that takes judgment</div><p>Whether a question suits its audience, whether a finding is stated clearly, whether two differently worded rules mean the same thing. The model works from what code has already pulled out.</p></div><div class="part me">
+      <span class="badge me mono">Me</span><div class="name">Every call that matters</div><p>The model reviews or does the legwork, and I decide what to act on. Nothing reaches a client without my sign-off.</p></div></div>
+    </div>
+  </section>
+  <section class="sec">
+    <h2 class="mono">Philosophy</h2>
+    <div class="body">
+      <h3>Get code to 90%, add judgment, keep learning</h3>
+      <p>Getting code to handle every case perfectly is close to impossible: real documents are messy, and chasing the last few cases means an ever-growing pile of brittle rules. Getting code to about 90% is very doable. A model, briefed with what I know about how the work is done, covers the last 10% and double-checks the calls that matter most. That leaves me with only the decisions that need my judgment. And the 90% keeps growing: each project leaves the tools a little better than it found them.</p>
+    </div>
+  </section>
+  <section class="sec">
+    <h2 class="mono">Patterns</h2>
+    <div class="body">
+      <h3>Patterns that carried over</h3>
+      <p>I built and refined these tools one stage at a time, across the whole project lifecycle. Again and again, an improvement in one place turned out to be a pattern that worked elsewhere too. A few examples:</p>
+      <ol class="patterns"><li class="pattern">
+      <div class="p-head"><div class="name">Read, then check the reading</div><div class="seq"><span class="badge code mono">Code</span><span class="arr mono">→</span><span class="badge model mono">Model</span></div></div>
+      <div class="p-body"><p>Code reads the document, and a model checks that reading against the original before anything relies on it. A bad reading makes every later check wrong.</p><a class="see mono" href="#step-01">Steps 01–02 ↓</a></div></li><li class="pattern">
+      <div class="p-head"><div class="name">The funnel</div><div class="seq"><span class="badge code mono">Code</span><span class="arr mono">→</span><span class="badge model mono">Model</span><span class="arr mono">→</span><span class="badge me mono">Me</span></div></div>
+      <div class="p-body"><p>Code flags everything, a model says which flags are real and why, and I see only what's left.</p><a class="see mono" href="#step-04">Steps 04–06 ↓</a></div></li><li class="pattern">
+      <div class="p-head"><div class="name">The learning loop</div><div class="seq"><span class="badge model mono">Model</span><span class="arr mono">→</span><span class="badge me mono">Me</span><span class="arr mono">→</span><span class="badge code mono">Code</span></div></div>
+      <div class="p-body"><p>When something goes wrong, the model or I write it down. Once the same kind of problem shows up again, I write a test for it and change the tool so it's caught automatically from then on. The survey's self-check came out of this loop.</p><a class="see mono" href="#step-03">Step 03 ↓</a></div></li></ol>
+    </div>
+  </section>
+  <section class="sec">
+    <h2 class="mono">Example</h2>
+    <div class="body">
+      <h3>Checking a programmed survey against its design</h3>
+      <p>Before a survey goes to the client or into the field, the programmed version has to match the approved questionnaire exactly: every question, answer option, skip rule, and quota. The usual way to check is to put the Word document and the survey platform side by side and scroll through both. That takes one to two hours depending on the survey, and it's easy to miss a detail deep in a long one.</p>
+      <div class="flow">
+      <div class="row cols-2"><div class="phase">
+        <div class="ph-head"><div class="ph-name">The questionnaire</div><div class="ph-blurb">What the survey is supposed to do</div></div>
+        <ol class="steps"><li class="step code" id="step-01">
+      <div class="s-head"><span class="n mono">01</span><span class="badge code mono">Code</span></div>
+      <div class="name">Read the Word document</div><p>Code turns the questionnaire into structured data: questions, options, logic notes, quotas.</p><figure class="sample"><figcaption class="mono">In the Word document</figcaption><pre><code>[ASK IF Q2.1 = CURRENTLY PURCHASE]
+Q2.3  What is your role in purchasing
+      decisions for warehouse shelving?
+  1   Final decision maker
+  2   Strong influence
+  3   Some input
+  4   Not involved        [TERMINATE]
+[PN: SINGLE SELECT. QUOTA: MIN 40%
+ FINAL DECISION MAKER]</code></pre></figure></li><li class="step model" id="step-02">
+      <div class="s-head"><span class="n mono">02</span><span class="badge model mono">Model</span></div>
+      <div class="name">Check the reading</div><p>Word documents are messy, so a model checks code's reading against the original and fixes what it got wrong, like a programming note that ended up inside an answer option or a grid whose rows shifted. A bad reading produces mostly false alarms later, so this has to finish first.</p><figure class="sample"><figcaption class="mono">Output: the questionnaire as structured data</figcaption><pre><code>{
+  &quot;id&quot;: &quot;Q2.3&quot;,
+  &quot;type&quot;: &quot;single choice&quot;,
+  &quot;display&quot;: &quot;Q2.1 = Currently purchase&quot;,
+  &quot;options&quot;: [&quot;Final decision maker&quot;,
+              &quot;Strong influence&quot;,
+              &quot;Some input&quot;,
+              &quot;Not involved&quot;],
+  &quot;terminate&quot;: [<mark>Not involved</mark>],
+  &quot;quotas&quot;: [<mark>Final decision maker ≥ 40%</mark>]
+}</code></pre></figure></li></ol></div><div class="phase">
+        <div class="ph-head"><div class="ph-name">The programmed survey</div><div class="ph-blurb">What the survey actually does</div></div>
+        <ol class="steps"><li class="step code" id="step-03">
+      <div class="s-head"><span class="n mono">03</span><span class="badge code mono">Code</span></div>
+      <div class="name">Read and check the survey export</div><p>The survey platform exports a structured file, so code reads it directly, with no model involved. Before any comparison, code also checks the survey against itself: whether every rule points at a question and answer that exist, whether quotas are tied to live questions, whether every value the survey reads is set somewhere. Each of those checks exists because that mistake once got through. Then it runs every combination of screener answers and reports who gets through. A comparison can't catch a mistake both documents share, so this has to happen on its own.</p><figure class="sample"><figcaption class="mono">Output: the survey as structured data</figcaption><pre><code>{
+  &quot;id&quot;: &quot;Q2.3&quot;,
+  &quot;type&quot;: &quot;single choice&quot;,
+  &quot;display&quot;: &quot;Q2.1 choice 1 selected&quot;,
+  &quot;options&quot;: [&quot;Final decision maker&quot;,
+              &quot;Strong influence&quot;,
+              &quot;Some input&quot;,
+              &quot;Not involved&quot;],
+  &quot;terminate&quot;: [<mark>Some input</mark>],
+  &quot;quotas&quot;: <mark>[]</mark>
+}</code></pre></figure><figure class="sample"><figcaption class="mono">Checks on the programmed survey</figcaption><pre><code>ok   rules all point at real questions
+ok   quotas all tied to live questions
+FAIL &quot;segment&quot; read at Q5.2, never set
+     screener paths, Q2.1 and Q2.3:
+     qualify:      Final decision maker,
+                   Strong influence,
+                   <mark>Not involved</mark>
+     screened out: <mark>Some input</mark></code></pre></figure></li></ol></div></div><svg class="join" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true"><path d="M25 0 V10 H75 V0 M50 10 V24" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+      <div class="row cols-1"><div class="phase">
+        <div class="ph-head"><div class="ph-name">Compare and decide</div><div class="ph-blurb">Where the two disagree, and what to do about it</div></div>
+        <ol class="steps"><li class="step code" id="step-04">
+      <div class="s-head"><span class="n mono">04</span><span class="badge code mono">Code</span></div>
+      <div class="name">Line them up</div><p>Code matches every question and option across the two readings and lists the differences. Some are certain, like a missing question or a wrong number of options. Others need judgment, like slightly different wording or logic written as prose in one and as a rule in the other.</p><figure class="sample"><figcaption class="mono">Word vs programmed, question by question</figcaption><pre><code>Q2.3 options ................ match
+  Word        4, same wording
+  Programmed  4, same wording
+Q2.3 display ....... needs judgment
+  Word        Q2.1 = Currently purchase
+  Programmed  Q2.1 choice 1 selected
+Q2.3 terminate ............ differs
+  Word        <mark>Not involved</mark>
+  Programmed  <mark>Some input</mark>
+Q2.3 quota ................ missing
+  Word        <mark>Final dec. maker ≥ 40%</mark>
+  Programmed  <mark>(none)</mark></code></pre></figure></li><li class="step model" id="step-05">
+      <div class="s-head"><span class="n mono">05</span><span class="badge model mono">Model</span></div>
+      <div class="name">Sort real problems from noise</div><p>A model works through the uncertain differences and separates real errors from harmless ones, with a reason for each. On one real survey, all 15 serious-looking flags turned out to be harmless, and three small real errors surfaced underneath them.</p><figure class="sample"><figcaption class="mono">Verdicts</figcaption><pre><code>Q2.3 terminate        <mark>Real error</mark>
+  Respondents with some input would be
+  screened out, and those not involved
+  would get through.
+Q2.3 quota            <mark>Real error</mark>
+  Nothing guarantees enough final
+  decision makers in the sample.
+Q2.3 display          Harmless
+  Choice 1 of Q2.1 is &quot;Currently
+  purchase&quot;.</code></pre></figure></li><li class="step me" id="step-06">
+      <div class="s-head"><span class="n mono">06</span><span class="badge me mono">Me</span></div>
+      <div class="name">Decide</div><p>I get a short checklist of real issues, each with the fix already written. I tick what to fix, or add a note to push back or redirect, and the analyst gets the result. Anything the tools couldn't confirm is listed separately.</p><figure class="sample"><figcaption class="mono">What I see</figcaption><pre><code>Programming review · v1
+2 to fix · 1 unconfirmed
+
+Q2.3
+[ ] Screen-out is on &quot;Some input&quot;;
+    the questionnaire says &quot;Not
+    involved&quot;. → Move it to option 4.
+[ ] Quota missing: final decision
+    makers at least 40%. → Add a
+    minimum-40% quota on option 1.
+
+Unconfirmed
+[ ] &quot;segment&quot; is read at Q5.2 but
+    never set. → Ask the analyst
+    where it should be assigned.
+
+Hidden: 1 harmless difference
+(Q2.3 display logic, same meaning)</code></pre></figure></li></ol></div></div></div>
+      <div class="compare"><table>
+      <thead><tr><th scope="col"></th><th scope="col">By hand</th><th scope="col">With the tooling</th></tr></thead>
+      <tbody><tr><th scope="row">Time</th><td data-label="By hand">One to two hours of a senior researcher's attention</td><td data-label="With the tooling">5–20 minutes, mostly unattended, plus a few minutes for my decisions</td></tr><tr><th scope="row">Cost</th><td data-label="By hand">That same senior time</td><td data-label="With the tooling">A few dollars of model usage</td></tr><tr><th scope="row">Coverage</th><td data-label="By hand">Whatever I catch while scrolling</td><td data-label="With the tooling">Every question, option, logic rule, and screener path</td></tr><tr><th scope="row">What it misses</th><td data-label="By hand">Details deep in a long survey</td><td data-label="With the tooling">Anything it can't confirm, which goes on my list instead of passing</td></tr></tbody>
+    </table></div>
+      <p>The same approach runs through the rest of my process, from <a href="./process.html#stage-statement-of-work">drafting the statement of work</a> and <a href="./process.html#stage-survey-design">reviewing questionnaires</a> to <a href="./process.html#stage-soft-launch-and-fielding">checking soft-launch data</a> and <a href="./process.html#stage-analysis">the final report</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer><a href="./">Home</a> · <a href="./resume.html">Resume</a> · <a href="./project-history.html">Project History</a> · <a href="./process.html">Process</a></footer>
+</div>
+</body>
+</html>

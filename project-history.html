@@ -1,0 +1,1885 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project History · Braden Agpoon</title>
+<meta name="description" content="178 research engagements led as Research Director, 2023 to 2026. Clients anonymized; sectors, methods, audiences, and client counterparts are real.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#FAFAF7; --ink:#0E0E0E; --text:#2E2E2C; --muted:#6A6A66; --rule:#D8D8D3; --accent:#2A46C8; --on-accent:#FAFAF7;
+  --sans:"Work Sans","Helvetica Neue",Arial,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121315; --ink:#EEEDE8; --text:#CFCFC9; --muted:#8F8F89; --rule:#2E2F32; --accent:#8C9BFF; --on-accent:#121315;
+}}
+:root[data-theme="dark"]{
+  --bg:#121315; --ink:#EEEDE8; --text:#CFCFC9; --muted:#8F8F89; --rule:#2E2F32; --accent:#8C9BFF; --on-accent:#121315;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--ink)}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.ink{color:var(--ink)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+/* site nav */
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;border:1.5px solid var(--ink);padding:12px 16px;margin-top:32px;flex-wrap:wrap}
+.nav .brand{font-family:var(--mono);font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.nav .brand span{color:var(--muted);text-transform:none;letter-spacing:.02em}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.nav li a{white-space:nowrap;color:var(--ink);padding:4px 0;display:inline-block}
+.nav li a.on{background:var(--accent);color:var(--on-accent);padding:4px 9px}
+/* header */
+.views{display:inline-flex;margin-top:18px;border:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.views a{border:0;color:var(--ink);padding:7px 14px}
+.views a.on{background:var(--ink);color:var(--bg)}
+.views a:not(.on):hover{background:var(--accent-tint,var(--rule))}
+.head{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:48px;padding:56px 0 36px;align-items:end}
+@media (max-width:860px){.head{grid-template-columns:1fr;gap:28px}}
+h1{font-weight:600;font-size:clamp(38px,5.2vw,60px);line-height:1.02;letter-spacing:-.03em;margin:0 0 18px;text-wrap:balance}
+.lede{font-size:17px;line-height:1.5;max-width:620px;margin:0;text-wrap:pretty}
+.lede a{color:var(--accent);border-bottom:1px solid var(--accent)}
+.lede a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5px;background:var(--ink);border:1.5px solid var(--ink);font-family:var(--mono)}
+.stat{background:var(--bg);padding:12px 14px}
+.stat b{display:block;font-weight:500;font-size:26px;line-height:1.2;font-variant-numeric:tabular-nums}
+.stat b.accent{color:var(--accent)}
+.stat span{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.4}
+/* filters */
+.filters{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:10px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule)}
+.filters .lab{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.filters select,.filters button{font-family:var(--mono);font-size:12px;padding:4px 10px;border:1px solid var(--ink);border-radius:0;background:var(--bg);color:var(--ink);cursor:pointer}
+.filters button.random{border-color:var(--accent);color:var(--accent)}
+.filters button.random:hover{background:var(--accent);color:var(--on-accent)}
+.filters button.clear{border-color:var(--rule);color:var(--muted)}
+.filters .count{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.jump{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px 14px;font-family:var(--mono);font-size:12px;letter-spacing:.04em}
+.jump a{color:var(--muted)}
+.jump a.on,.jump a:hover{color:var(--accent)}
+@media (max-width:860px){.jump{margin-left:0;width:100%}}
+/* quarters + rows */
+main{padding:8px 0 120px}
+.year{padding-top:44px;scroll-margin-top:56px}
+.year.hidden,.quarter.hidden{display:none}
+.yhead{display:grid;grid-template-columns:140px minmax(0,1fr);gap:20px;align-items:baseline;padding-bottom:10px}
+.yname{font-size:44px;letter-spacing:-.03em;line-height:1}
+.ymeta{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.quarter{padding-top:22px;scroll-margin-top:56px}
+.qhead{display:flex;gap:14px;align-items:baseline;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-bottom:4px}
+.qhead .qname{color:var(--ink);font-size:15px;letter-spacing:.02em}
+.colhead,.row{display:grid;grid-template-columns:200px minmax(0,1fr) 220px;gap:24px}
+.colhead{padding:6px 0;border-top:2px solid var(--ink);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.row{padding:18px 0;border-top:1px solid var(--rule);align-items:start;scroll-margin-top:120px}
+.row:target{outline:2px solid var(--accent);outline-offset:6px}
+.row.hidden{display:none}
+.c-meta{font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;line-height:1.6;color:var(--ink);display:flex;flex-direction:column}
+.c-study{display:flex;flex-direction:column;gap:8px;min-width:0}
+.title{margin:0;font-weight:600;font-size:18px;line-height:1.3;letter-spacing:-.01em;text-wrap:pretty}
+.who{margin:0;font-size:14.5px;line-height:1.5;color:var(--text);text-wrap:pretty}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:2px 7px}
+.c-cp{font-size:12px;line-height:1.6;color:var(--muted)}
+.cplab{display:none}
+@media (max-width:860px){
+  .colhead{display:none}
+  .row{grid-template-columns:1fr;gap:8px}
+  .c-meta{flex-direction:row;flex-wrap:wrap;gap:0 12px;line-height:1.4}
+  .cplab{display:inline}
+  .yhead{grid-template-columns:1fr;gap:4px}
+}
+footer{border-top:1.5px solid var(--ink);padding:20px 0 60px;color:var(--muted);font-family:var(--mono);font-size:12px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <div class="brand"><a href="./" style="color:inherit">Braden Agpoon</a> <span>/ research director</span></div>
+  <ul>
+    <li><a href="./resume.html">Resume</a></li>
+    <li><a href="./project-history.html" class="on" aria-current="page">Project History</a></li>
+    <li><a href="./process.html">Process</a></li>
+    <li><a href="./ai-tooling.html">AI Tooling</a></li>
+  </ul>
+</nav>
+
+<header class="head">
+  <div>
+    <h1>Project History</h1>
+    <p class="lede">As a Research Director, I have delivered 178 custom survey research projects to 86 clients since 2023, each one <a href="./process.html">from the first client call through the final presentation</a>. The projects vary widely in industry, subject matter, audience, and method. Most of them required me to learn a new sector quickly enough to scope, design, and deliver a solid study. That is also why I started <a href="./ai-tooling.html">building my own tooling</a> to work more efficiently. To get a sense of how varied the work is, click Random project a few times.</p>
+    <nav class="views" aria-label="View"><a href="./project-history.html" class="on" aria-current="page">List</a><a href="./project-graph.html">Graph</a></nav>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>178</b><span>engagements</span></div>
+    <div class="stat"><b>86</b><span>clients</span></div>
+    <div class="stat"><b>72%</b><span>for returning clients</span></div>
+    <div class="stat"><b class="accent">23</b><span>with advanced analytics</span></div>
+  </div>
+</header>
+
+<div class="filters" id="filters">
+  <select id="f-sector" aria-label="Sector"><option value="">Sector: All</option><option value="b2b-software">B2B software (25)</option><option value="building-products-construction">Building products &amp; construction (31)</option><option value="consumer-products">Consumer products (16)</option><option value="food-beverage">Food &amp; beverage (10)</option><option value="healthcare-services">Healthcare services (7)</option><option value="industrial-manufacturing">Industrial &amp; manufacturing (29)</option><option value="insurance">Insurance (1)</option><option value="media-entertainment">Media &amp; entertainment (1)</option><option value="medical-devices">Medical devices (34)</option><option value="nonprofit-associations">Nonprofit &amp; associations (12)</option><option value="other">Other (3)</option><option value="pharma-life-sciences">Pharma &amp; life sciences (2)</option><option value="professional-services">Professional services (2)</option><option value="telecom">Telecom (1)</option><option value="transportation-logistics">Transportation &amp; logistics (4)</option></select>
+  <select id="f-method" aria-label="Method"><option value="">Method: All</option><option value="awareness-trial-usage">Awareness-trial-usage</option><option value="brand-positioning">Brand positioning</option><option value="brand-tracking">Brand tracking</option><option value="buyer-journey">Buyer journey</option><option value="concept-test">Concept test</option><option value="conjoint">Conjoint</option><option value="creative-testing">Creative testing</option><option value="customer-satisfaction">Customer satisfaction</option><option value="employee">Employee</option><option value="market-sizing">Market sizing</option><option value="maxdiff">MaxDiff</option><option value="message-testing">Message testing</option><option value="needs-assessment">Needs assessment</option><option value="pricing">Pricing</option><option value="segmentation">Segmentation</option><option value="usage-attitudes">Usage &amp; attitudes</option><option value="win-loss">Win-loss</option></select>
+  <button id="f-random" class="random" type="button">Random project</button>
+  <button id="f-clear" class="clear" type="button">Clear</button>
+  <span class="count" id="f-count">178 shown</span>
+  <nav class="jump" id="jump" aria-label="Years"><a href="#y-2026" data-y="2026">2026</a><a href="#y-2025" data-y="2025">2025</a><a href="#y-2024" data-y="2024">2024</a><a href="#y-2023" data-y="2023">2023</a></nav>
+</div>
+
+<main>
+<section class="year" id="y-2026" data-year="2026">
+  <div class="yhead">
+    <div class="yname mono">2026</div>
+    <div class="ymeta mono"><span class="ycount">35 engagements</span><span class="yadv"> · 2 with advanced analytics</span></div>
+  </div>
+  <div class="colhead mono"><div>Sector / solution / delivered</div><div>Study / who answered / technique</div><div>Client counterpart</div></div>
+  
+  <section class="quarter" id="q-2026-q3" data-quarter="2026 Q3">
+    <div class="qhead mono"><span class="qname">Q3</span><span class="qcount">9 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-92043" data-sector="industrial-manufacturing" data-methods="brand-positioning awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">brand strategy</span><span class="muted">Aug 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Aerospace and Defense Wire-and-Cable Group: Brand Architecture Baseline Survey</h3>
+        <p class="who">Engineers and procurement leaders at aerospace, space, and defense OEMs and tier suppliers, measuring awareness of a newly formed umbrella brand and its legacy business units.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of marketing and innovation</div>
+    </article>
+    <article class="row" id="e-Proj-92044" data-sector="consumer-products" data-methods="creative-testing" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">product innovation</span><span class="muted">Aug 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Logo and Packaging Concept Test for a New Textured-Hair Care Line</h3>
+        <p class="who">Women with curly or coily hair who buy maintenance and styling products, reacting to logo and packaging directions as a personal-care company launched its first line for this consumer.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>head of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-92648" data-sector="healthcare-services" data-methods="awareness-trial-usage brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>healthcare services</span><span class="muted">market entry</span><span class="muted">Aug 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Annual Physician Awareness and Perceptions Benchmark for Locum Tenens Staffing</h3>
+        <p class="who">Physicians across many specialties, in a yearly benchmark of awareness, interest, and agency perceptions that also asked new questions on float pools, job security, and AI.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>insights lead</div>
+    </article>
+    <article class="row" id="e-Proj-92747" data-sector="medical-devices" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">brand strategy</span><span class="muted">Aug 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">In-Vitro Diagnostics Master Brand: Blinded Global Brand Tracker, First Wave</h3>
+        <p class="who">Laboratory, transfusion-medicine, and informatics decision-makers across global markets, surveyed blind to establish an enterprise-level brand baseline in time for a board meeting.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>communications strategy manager</div>
+    </article>
+    <article class="row" id="e-Proj-90261" data-sector="medical-devices" data-methods="usage-attitudes needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Jul 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Nephrologist Perceptions and Barriers Study for an Under-Prescribed Home Dialysis Modality</h3>
+        <p class="who">Nephrologists who prescribe home dialysis, surveyed on beliefs, barriers, and patient-eligibility criteria behind low adoption of an extended-duration modality, to feed education and clinical-evidence programs.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>therapy operations director</div>
+    </article>
+    <article class="row" id="e-Proj-90940" data-sector="medical-devices" data-methods="market-sizing needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">market entry</span><span class="muted">Jul 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Cell Collection Market Landscape and Growth Study Across Hospitals and Blood Centers</h3>
+        <p class="who">Medical directors, lab leaders, and collection managers at hospitals and blood centers, on collection volumes by therapy type, capacity, and readiness as disposable-kit use diverged from field reports of growth.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>insights team</div>
+    </article>
+    <article class="row" id="e-Proj-91183" data-sector="nonprofit-associations" data-methods="awareness-trial-usage customer-satisfaction" data-adv="0">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">market entry</span><span class="muted">Jul 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Downtown District Visitor Perception Baseline Survey</h3>
+        <p class="who">Residents, workers, visitors, and business owners of a mid-sized city's central district, establishing a baseline the district management organization can repeat, publish, and use in fundraising.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>communications manager</div>
+    </article>
+    <article class="row" id="e-Proj-91675" data-sector="medical-devices" data-methods="usage-attitudes market-sizing" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Jul 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Physician Utilization and Indication-Expansion Survey for a Neurovascular Implant</h3>
+        <p class="who">Interventional specialists who use a neurovascular implant, surveyed on device selection, sizing confidence, and use beyond the approved indication as the maker prepared for new market entrants.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of global marketing</div>
+    </article>
+    <article class="row" id="e-Proj-92400" data-sector="b2b-software" data-methods="customer-satisfaction" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">customer insights</span><span class="muted">Jul 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Clinical Reference App: Customer Satisfaction Tracker</h3>
+        <p class="who">Clinicians and medical trainees who used the app in the past year, tracked against prior waves as the maker tested a gated free-to-paid model and new AI features.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing manager</div>
+    </article></div>
+  </section>
+  <section class="quarter" id="q-2026-q2" data-quarter="2026 Q2">
+    <div class="qhead mono"><span class="qname">Q2</span><span class="qcount">19 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-91563" data-sector="industrial-manufacturing" data-methods="needs-assessment customer-satisfaction" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Jun 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Commercial Cooling Equipment Aftermarket Parts: Sourcing Behavior Survey</h3>
+        <p class="who">Facility owners, managers, and contractors who buy replacement parts for heat-rejection equipment across comfort cooling, process cooling, and refrigeration, sizing the patterns found in an earlier interview phase.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>regional marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-91569" data-sector="building-products-construction" data-methods="concept-test" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">product innovation</span><span class="muted">Jun 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Shear-Wall Sheathing Reinforcement Concept Test in Wind and Seismic Markets</h3>
+        <p class="who">Structural engineers, builders, and installers of wood-frame shear walls in Southeast and West Coast markets, testing demand, appeal, and price for a new connector concept.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-92041" data-sector="nonprofit-associations" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">brand strategy</span><span class="muted">Jun 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Donor Brand Health Tracker for an Education Nonprofit, Third Wave</h3>
+        <p class="who">Recent donors to social causes above a household-income floor, tracked across waves on awareness, affinity, and intent to give, cut by the personas from an earlier segmentation.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>communications director</div>
+    </article>
+    <article class="row" id="e-Proj-92173" data-sector="nonprofit-associations" data-methods="market-sizing other" data-adv="0">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">market entry</span><span class="muted">Jun 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Sonography Education Pipeline: Program Leader Survey for a Workforce Sizing Model</h3>
+        <p class="who">Directors of sonography training programs, accredited and not, on enrollment, clinical placement capacity, and credential pathways to fill gaps in a certification body's exam demand forecast.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>customer insights director</div>
+    </article>
+    <article class="row" id="e-Proj-87226" data-sector="building-products-construction" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">May 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Self-Drilling Metal Fasteners: Retail Path-to-Purchase Survey</h3>
+        <p class="who">Contractors, tradespeople, and do-it-yourselfers in the US and Canada who bought self-drilling fasteners in the past year, surveyed on channels, attributes, and packaging to set SKU range and retail merchandising.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product-line director</div>
+    </article>
+    <article class="row" id="e-Proj-88282" data-sector="healthcare-services" data-methods="customer-satisfaction brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>healthcare services</span><span class="muted">customer insights</span><span class="muted">May 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Staffing Agency Ratings Among Travel Healthcare Professionals: Second Wave</h3>
+        <p class="who">Traveling clinicians, allied health professionals, locum tenens, and healthcare leaders, rating the agencies they had recently worked with, with the sample widened to locums and leadership this wave.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>chief marketing officer</div>
+    </article>
+    <article class="row" id="e-Proj-88965" data-sector="medical-devices" data-methods="needs-assessment usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">May 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Imaging-Compatible Surgical Table: Market Use and Needs Assessment</h3>
+        <p class="who">Spine, trauma, vascular, and cardiac surgeons plus pain-management and radiology clinicians, consulted as legacy products neared end of life and a next-generation design took shape.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-91170" data-sector="industrial-manufacturing" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">brand strategy</span><span class="muted">May 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Residential Ceiling Fan Brand Tracker Among Homeowners and Designers: Fourth Wave</h3>
+        <p class="who">Affluent homeowners who recently bought a ceiling fan, plus interior designers and architects, in an ongoing wave-over-wave read of brand awareness and preference.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-91234" data-sector="b2b-software" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">market entry</span><span class="muted">May 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">AI Adoption in Specialty Medical Practices: Thought-Leadership Survey</h3>
+        <p class="who">Physicians, practice managers, and administrators across a dozen specialties, on where AI has reached beyond the exam room, to produce publishable data for a practice software vendor.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>content marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-91544" data-sector="consumer-products" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">brand strategy</span><span class="muted">May 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Small Kitchen Appliance Brand Portfolio: Brand Health Baseline</h3>
+        <p class="who">Household small-appliance buyers nationwide, establishing baseline health for a maker's sibling consumer brands as retailers pressed for clearer differentiation between them.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>e-commerce and marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-90123" data-sector="nonprofit-associations" data-methods="brand-tracking awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">brand strategy</span><span class="muted">Apr 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Public School Educator Brand Health Baseline for an Education Nonprofit</h3>
+        <p class="who">Public school teachers, administrators, and support staff from a broad panel rather than the nonprofit's own list, establishing baseline awareness, affinity, and understanding of its model ahead of a teacher acquisition push.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>communications director</div>
+    </article>
+    <article class="row" id="e-Proj-90244" data-sector="industrial-manufacturing" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">brand strategy</span><span class="muted">Apr 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Industrial Ceiling Fan Brand Tracker Among Facility Buyers: Second Wave</h3>
+        <p class="who">Facility decision-makers in manufacturing, distribution, and warehousing, in a second wave that added non-purchasers to learn what keeps them from buying.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-90364" data-sector="consumer-products" data-methods="concept-test" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">product innovation</span><span class="muted">Apr 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Step-Up Shampoo and Conditioner Line: In-Home Usage Test</h3>
+        <p class="who">Frequent shampoo and conditioner users who shop mass, club, and drug channels, trying three new formulas at home ahead of a value label's move to a higher price tier.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>head of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-90444" data-sector="b2b-software" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">brand strategy</span><span class="muted">Apr 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Contract Lifecycle Management Software: Brand Tracker and AI Disruption Read</h3>
+        <p class="who">Legal, procurement, and sales managers in the US and Canada who influence contract-software choices, benchmarked after a brand refresh and ahead of an AI product launch.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>brand manager</div>
+    </article>
+    <article class="row" id="e-Proj-90446" data-sector="healthcare-services" data-methods="customer-satisfaction usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>healthcare services</span><span class="muted">market entry</span><span class="muted">Apr 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Locum Tenens Physician Experience Survey</h3>
+        <p class="who">Physicians with current or recent locum tenens experience drawn from staffing-agency databases, surveyed in depth on their journey, agency needs, and pay to supplement an annual awareness benchmark.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>insights lead</div>
+    </article>
+    <article class="row" id="e-Proj-90451" data-sector="consumer-products" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">brand strategy</span><span class="muted">Apr 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Under-Sink Kitchen Appliance Category: Homeowner and Trade Brand Tracker, Third Wave</h3>
+        <p class="who">Homeowners and residential plumbers, builders, and contractors, tracked across waves as retailer private labels and post-pandemic housing shifts pressured the incumbent's share.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product planning director</div>
+    </article>
+    <article class="row" id="e-Proj-90452" data-sector="b2b-software" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">market entry</span><span class="muted">Apr 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Student Use of AI and Recorded Lectures: Global Thought Leadership Survey</h3>
+        <p class="who">Higher-education students in the US, Asia-Pacific, and Europe who learn from recorded lectures, surveyed to anchor a campaign piece and inform a video platform's product roadmap.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>chief marketing officer</div>
+    </article>
+    <article class="row" id="e-Proj-90602" data-sector="medical-devices" data-methods="usage-attitudes needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Apr 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Endoscope Reprocessing Efficiency and Single-Use Perception Survey</h3>
+        <p class="who">Endoscopy clinicians across several specialties and reprocessing technicians, surveyed on workflow burden, sterility confidence, and adoption barriers to sharpen positioning and education for a single-use device maker.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-91562" data-sector="consumer-products" data-methods="needs-assessment concept-test" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">customer insights</span><span class="muted">Apr 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Phase Two: Enhanced Drinking Water Needs and Usage Survey</h3>
+        <p class="who">US homeowners and renters who buy enhanced water or own a home filtration system, in a second phase narrowing which enhancement functions an in-home system should offer.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of strategy and innovation</div>
+    </article></div>
+  </section>
+  <section class="quarter" id="q-2026-q1" data-quarter="2026 Q1">
+    <div class="qhead mono"><span class="qname">Q1</span><span class="qcount">7 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-88746" data-sector="industrial-manufacturing" data-methods="usage-attitudes awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Mar 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Bulk Diesel Fuel Contaminant-Control Equipment: Awareness and Usage Survey</h3>
+        <p class="who">Distributors and high-volume end users of diesel fuel in construction, mining, marine, and transport across the Americas, mapping incumbents and selection criteria before a market push.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>global marketing lead</div>
+    </article>
+    <article class="row" id="e-Proj-88772" data-sector="medical-devices" data-methods="message-testing" data-adv="1">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">product innovation</span><span class="muted">Mar 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Sterile Tubing Connection Devices: MaxDiff Message Test for Blood Centers and Hospitals</h3>
+        <p class="who">Lab managers, medical directors, and quality leads at blood centers and hospitals that use sterile connection equipment, ranking claims by importance as overseas competitors threatened to enter the market.</p>
+        <div class="chips"><span class="chip mono">MaxDiff</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>insights team</div>
+    </article>
+    <article class="row" id="e-Proj-88987" data-sector="consumer-products" data-methods="needs-assessment usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">customer insights</span><span class="muted">Mar 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Enhanced Drinking Water Needs and Usage Survey for Residential Filtration</h3>
+        <p class="who">US homeowners and renters who buy enhanced water or own a home filtration system, surveyed on preferred enhancements and what would move them to an in-home system.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of strategy and innovation</div>
+    </article>
+    <article class="row" id="e-Proj-89118" data-sector="industrial-manufacturing" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Mar 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Large-Diameter Industrial Airflow Equipment: Path-to-Purchase Survey</h3>
+        <p class="who">Facility, plant, and operations leaders across manufacturing, agriculture, aviation, and commercial sites who recently bought or planned to buy high-volume airflow equipment, including their media and hobby habits for ad placement.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>industrial marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-89165" data-sector="building-products-construction" data-methods="concept-test" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">product innovation</span><span class="muted">Mar 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Adjustable Steel Support-Framing Concept Test Among Mechanical Contractors</h3>
+        <p class="who">Mechanical contractors who install rooftop units on large commercial buildings, shown a concept video to gauge whether a structural product could win a trade that rarely does structural work.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product-line director</div>
+    </article>
+    <article class="row" id="e-Proj-89745" data-sector="b2b-software" data-methods="brand-tracking brand-positioning" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">brand strategy</span><span class="muted">Mar 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Annual Clinician Brand Equity Wave for a Clinical Reference App</h3>
+        <p class="who">Physicians, nurses, and advanced practice clinicians who use clinical decision-support apps, in a repeat equity wave tracking movement since the relaunch.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-88768" data-sector="b2b-software" data-methods="brand-tracking" data-adv="1">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">brand strategy</span><span class="muted">Feb 2026</span></div>
+      <div class="c-study">
+        <h3 class="title">Specialty Practice Brand Tracker for Practice Management and EHR Software</h3>
+        <p class="who">Physicians, advanced practitioners, and administrators across many specialties at private practices, in the first wave of a repeatable tracker built to benchmark competitors and detect brand confusion.</p>
+        <div class="chips"><span class="chip mono">key driver</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>content marketing manager</div>
+    </article></div>
+  </section>
+</section>
+<section class="year" id="y-2025" data-year="2025">
+  <div class="yhead">
+    <div class="yname mono">2025</div>
+    <div class="ymeta mono"><span class="ycount">48 engagements</span><span class="yadv"> · 7 with advanced analytics</span></div>
+  </div>
+  <div class="colhead mono"><div>Sector / solution / delivered</div><div>Study / who answered / technique</div><div>Client counterpart</div></div>
+  
+  <section class="quarter" id="q-2025-q4" data-quarter="2025 Q4">
+    <div class="qhead mono"><span class="qname">Q4</span><span class="qcount">1 engagement</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-85641" data-sector="building-products-construction" data-methods="concept-test" data-adv="1">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">product innovation</span><span class="muted">Oct 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">MEP Anchorage Design Software: Choice-Based Conjoint Concept Test</h3>
+        <p class="who">Contractors, specifiers, and engineers at design-build firms who select anchorage for commercial MEP and fire-protection work, trading off software features and per-seat pricing to shape a minimum viable product.</p>
+        <div class="chips"><span class="chip mono">conjoint</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product-line director</div>
+    </article></div>
+  </section>
+  <section class="quarter" id="q-2025-q3" data-quarter="2025 Q3">
+    <div class="qhead mono"><span class="qname">Q3</span><span class="qcount">20 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-85643" data-sector="b2b-software" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">market entry</span><span class="muted">Sep 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Consumer Subscription Fatigue and Stacking Survey</h3>
+        <p class="who">Employed adults in the US and Europe who signed up for a subscription in the past year, surveyed on volume, fatigue, and cancellation triggers to fuel a billing platform's thought leadership.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-86174" data-sector="b2b-software" data-methods="brand-positioning awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">brand strategy</span><span class="muted">Sep 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Clinician Brand Equity Survey for a Relaunched Clinical Reference App</h3>
+        <p class="who">Physicians, nurses, and advanced practice clinicians who use clinical decision-support apps, in a renewed equity wave after the app's rebrand and relaunch.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-86215" data-sector="medical-devices" data-methods="pricing message-testing" data-adv="1">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">product innovation</span><span class="muted">Sep 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Surgical Patient-Support Surface: Value Proposition and Pricing Study</h3>
+        <p class="who">Clinicians, administrators, and procurement leads at hospitals and surgery centers, on perceived value and purchase, rental, and lease-to-own price points for a device whose adoption had stalled.</p>
+        <div class="chips"><span class="chip mono">pricing</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing operations manager</div>
+    </article>
+    <article class="row" id="e-Proj-86457" data-sector="medical-devices" data-methods="customer-satisfaction brand-tracking" data-adv="1">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Sep 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Customer Sentiment Tracker for a Blood-Center Equipment Supplier: Second Wave</h3>
+        <p class="who">Existing US and Canadian customers at hospitals, blood centers, and specimen providers, re-surveyed a year on to trend satisfaction and loyalty against the baseline.</p>
+        <div class="chips"><span class="chip mono">key driver</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-85482" data-sector="consumer-products" data-methods="usage-attitudes win-loss" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">customer insights</span><span class="muted">Aug 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Premium Pet Food: Lapsed Buyer Study</h3>
+        <p class="who">Dog and cat owners who bought the brand in the past year, split into triers, repeaters, and loyalists to learn why one purchase so often fails to become a second.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>regional president</div>
+    </article>
+    <article class="row" id="e-Proj-85639" data-sector="building-products-construction" data-methods="buyer-journey customer-satisfaction" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Aug 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Online Bathroom Vanity Shopping Experience Survey</h3>
+        <p class="who">Homeowners who bought a bathroom vanity online in the past year, surveyed as a cabinetry maker repositioned a brand for big-box e-commerce shelves.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-85640" data-sector="building-products-construction" data-methods="pricing concept-test" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">product innovation</span><span class="muted">Aug 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Price-Elasticity Study for a New Impact-Resistant Residential Siding</h3>
+        <p class="who">Siding contractors, remodelers, builders, and distributors outside the Southwest, reacting to price points and comparing the concept with fiber cement and engineered wood ahead of launch.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-85642" data-sector="medical-devices" data-methods="usage-attitudes needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Aug 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Prescriber Practice Survey on a Specialist Blood Therapy for a Chronic Blood Disorder</h3>
+        <p class="who">Primary care physicians who manage patients with a chronic blood disorder, surveyed on awareness, referral, and access barriers as the device maker built its case for expanding treatment reach.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>insights team</div>
+    </article>
+    <article class="row" id="e-Proj-85644" data-sector="building-products-construction" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Aug 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Consulting Engineers' Path to Basis of Design for Commercial Air-Side HVAC Equipment</h3>
+        <p class="who">Consulting engineers who specify commercial air-side HVAC equipment, on when they trust a manufacturer's self-service selection tool versus calling a rep, across product categories of rising complexity.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>customer insights manager</div>
+    </article>
+    <article class="row" id="e-Proj-86170" data-sector="nonprofit-associations" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">brand strategy</span><span class="muted">Aug 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Nonprofit Brand Health Tracker Among Charitable Givers</h3>
+        <p class="who">US adults who gave to a social cause in the past year, benchmarking awareness and favorability against peer nonprofits and linked back to the earlier giver segmentation.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>communications director</div>
+    </article>
+    <article class="row" id="e-Proj-81606" data-sector="industrial-manufacturing" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Jul 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Integrated Beverage-Dispensing Bundle: Operator Attitudes, Usage and Concept Evaluation</h3>
+        <p class="who">Franchise owners and operations managers at quick-service restaurants, gas stations, and convenience stores, on their dispenser setups and appetite for a bundled system from a beverage-equipment maker.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product management VP</div>
+    </article>
+    <article class="row" id="e-Proj-82367" data-sector="transportation-logistics" data-methods="usage-attitudes needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>transportation &amp; logistics</span><span class="muted">customer insights</span><span class="muted">Jul 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Consumer Willingness to Pay for Faster Shipping: Purchase-Occasion Survey</h3>
+        <p class="who">Frequent online shoppers of home goods, cosmetics, and apparel, asked what they actually pay for speed across purchase occasions as a last-mile carrier sharpened its delivery-window offering.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-82368" data-sector="transportation-logistics" data-methods="needs-assessment pricing" data-adv="0">
+      <div class="c-meta mono"><span>transportation &amp; logistics</span><span class="muted">customer insights</span><span class="muted">Jul 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Retailer Shipping-Model Maturity and Service-Tier Survey</h3>
+        <p class="who">Logistics, e-commerce, and supply-chain directors at direct-to-consumer retailers in home goods, cosmetics, and apparel, placed on a shipping-sophistication ladder so a last-mile carrier could design tiered offerings.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-83656" data-sector="industrial-manufacturing" data-methods="needs-assessment market-sizing" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Jul 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Turbine Oil-Conditioning Systems at European Power Plants: Market Landscape Survey</h3>
+        <p class="who">Maintenance decision-makers at coal, nuclear, combined-cycle, and biomass plants across Western Europe, mapping incumbents and pain points before a contaminant-control maker entered the segment.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>global marketing lead</div>
+    </article>
+    <article class="row" id="e-Proj-84046" data-sector="food-beverage" data-methods="usage-attitudes segmentation" data-adv="1">
+      <div class="c-meta mono"><span>food &amp; beverage</span><span class="muted">brand strategy</span><span class="muted">Jul 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Shelf-Stable Juice Attitudes, Usage, and Segmentation Study</h3>
+        <p class="who">Household grocery decision-makers who buy shelf-stable juice, re-segmented to see whether the personas had shifted since an earlier study.</p>
+        <div class="chips"><span class="chip mono">segmentation</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>analytics manager</div>
+    </article>
+    <article class="row" id="e-Proj-84048" data-sector="industrial-manufacturing" data-methods="usage-attitudes market-sizing" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Jul 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Electric Versus Air-Operated Diaphragm Pumps: European Adoption Potential Survey</h3>
+        <p class="who">Procurement, maintenance, and engineering staff at chemical and industrial plants across major European markets, on how ready they are to swap air-powered pumps for electric ones.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>pricing and marketing lead</div>
+    </article>
+    <article class="row" id="e-Proj-85073" data-sector="nonprofit-associations" data-methods="message-testing" data-adv="1">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">product innovation</span><span class="muted">Jul 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Charitable-Giving Message-Testing MaxDiff by Persona Group</h3>
+        <p class="who">Recent charitable givers who fit three persona groups from an earlier segmentation, ranking messages so an education nonprofit could tune its appeals to each group.</p>
+        <div class="chips"><span class="chip mono">MaxDiff</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>strategic communications director</div>
+    </article>
+    <article class="row" id="e-Proj-85202" data-sector="nonprofit-associations" data-methods="awareness-trial-usage brand-positioning" data-adv="0">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">market entry</span><span class="muted">Jul 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Regional Economic-Development Brand: Community Awareness and Perception Survey</h3>
+        <p class="who">Residents and director-level staff at major employers in a metro sub-region, on whether they can place the region on a map and what they associate with its name.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-85326" data-sector="medical-devices" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Jul 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Primary Care Procedure Tools: Path-to-Purchase Survey</h3>
+        <p class="who">Primary care, family, and pediatric clinicians across practice types, surveyed after slower-than-hoped launches to see where distribution and procurement break the path from sample to purchase.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-85458" data-sector="building-products-construction" data-methods="customer-satisfaction needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Jul 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Cabinetry Dealer and Designer Survey on Species, Features, and Supplier Priorities</h3>
+        <p class="who">Cabinetry dealers and kitchen and bath designers across sales regions, asked about wood-species demand and must-have features as a cabinetry maker decided whether to add a species it did not offer.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product development manager</div>
+    </article></div>
+  </section>
+  <section class="quarter" id="q-2025-q2" data-quarter="2025 Q2">
+    <div class="qhead mono"><span class="qname">Q2</span><span class="qcount">13 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-83657" data-sector="industrial-manufacturing" data-methods="pricing customer-satisfaction" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Jun 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">International Aviation Fuel-Filter Brand and Value Survey</h3>
+        <p class="who">Managers at fuel terminals, refineries, pipelines, and airport fueling operators plus distributors across several overseas markets, surveyed on perceptions and purchase drivers as an industrial filter maker refined its international approach.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>global marketing and strategy lead</div>
+    </article>
+    <article class="row" id="e-Proj-84049" data-sector="other" data-methods="buyer-journey usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>other</span><span class="muted">customer insights</span><span class="muted">Jun 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Out-of-Pocket Auto Body Repair: Customer Decision and Shop Choice Survey</h3>
+        <p class="who">Vehicle owners who paid out of pocket for auto body repair recently, surveyed as a national repair chain sized and targeted a segment where its share was unclear.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-84050" data-sector="other" data-methods="buyer-journey customer-satisfaction" data-adv="0">
+      <div class="c-meta mono"><span>other</span><span class="muted">customer insights</span><span class="muted">Jun 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Insurance-Paid Auto Body Repair: Customer Journey and Shop Selection Survey</h3>
+        <p class="who">Vehicle owners whose recent body repair was covered by an insurance claim, surveyed on claim thresholds, shop selection, and pain points as a national repair chain worked to win more insurer-directed work.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-84052" data-sector="b2b-software" data-methods="customer-satisfaction" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">customer insights</span><span class="muted">Jun 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Clinical Reference App: Customer Satisfaction and Freemium Usage Survey</h3>
+        <p class="who">Physicians, nurse practitioners, and physician assistants from the app's user list, updating an earlier satisfaction study as the app weighed a freemium model and added AI and content-format questions.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>segment marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-83343" data-sector="food-beverage" data-methods="needs-assessment usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>food &amp; beverage</span><span class="muted">customer insights</span><span class="muted">May 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Convenience-Store Beverage Shopper Needs Assessment</h3>
+        <p class="who">Regular coffee drinkers who recently bought a dispensed or ready-to-drink cup at a convenience store, surveyed as an integrated beverage supplier expanded its offerings for that channel.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>insights team</div>
+    </article>
+    <article class="row" id="e-Proj-83654" data-sector="industrial-manufacturing" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">brand strategy</span><span class="muted">May 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Industrial Airflow and Ventilation Equipment: Business-Buyer Brand Tracker</h3>
+        <p class="who">Facility and operations buyers in manufacturing, warehousing, and logistics who specify ventilation equipment, benchmarked on awareness, perception, and recommendation across the competitive set.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>industrial marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-84045" data-sector="b2b-software" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">customer insights</span><span class="muted">May 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Subscription Consumer Retention Survey for Thought Leadership</h3>
+        <p class="who">Employed adults in the US and Europe who signed up for a subscription in the past year, in a repeat of an earlier global study feeding a retention thought-leadership piece.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>content director</div>
+    </article>
+    <article class="row" id="e-Proj-84357" data-sector="medical-devices" data-methods="concept-test needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">May 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Brain-Monitoring Electrode Feature Preferences Survey</h3>
+        <p class="who">Technologists who place electrodes and the managers who buy them at US hospitals, giving quick feature-priority reads as the maker designed a replacement for an outsourced product.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>market access director</div>
+    </article>
+    <article class="row" id="e-Proj-80587" data-sector="food-beverage" data-methods="concept-test" data-adv="0">
+      <div class="c-meta mono"><span>food &amp; beverage</span><span class="muted">product innovation</span><span class="muted">Apr 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Frozen Breaded Fish: In-Home Taste Test Against the Category Leader</h3>
+        <p class="who">Households that regularly buy frozen breaded fish, cooking two of the producer's products and two from the leading competitor at home to judge parity on taste, texture, and prep.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-82638" data-sector="consumer-products" data-methods="brand-positioning awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">brand strategy</span><span class="muted">Apr 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Household Cleaning Trademarks: Equity and Consolidation Study</h3>
+        <p class="who">Household shoppers who buy dish soap, dish spray, or glass cleaner, rating two legacy cleaning trademarks against rivals as their owner weighed consolidating under one.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>head of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-82639" data-sector="consumer-products" data-methods="segmentation concept-test" data-adv="1">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">customer insights</span><span class="muted">Apr 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Value Hair and Body Care Label: Segmentation and Extendibility Study</h3>
+        <p class="who">Primary shoppers of shampoo, body wash, and bar soap across food, drug, mass, and club channels, segmented by mindset to test whether a value label can stretch into higher price tiers.</p>
+        <div class="chips"><span class="chip mono">segmentation</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>head of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-83342" data-sector="building-products-construction" data-methods="buyer-journey market-sizing" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Apr 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Recycled-Fiber Insulation: Contractor and Builder Channel Expansion Survey</h3>
+        <p class="who">Insulation contractors and residential builders, surveyed on appeal, pricing, and barriers as the maker looked beyond a single big-box channel toward the builder market.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-83999" data-sector="other" data-methods="employee needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>other</span><span class="muted">customer insights</span><span class="muted">Apr 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Auto Body Technician Recruiting and Retention Survey</h3>
+        <p class="who">Body technicians at every experience level, on what draws them to an employer and what drives them out, for a large repair operator struggling to hire experienced hands.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing VP</div>
+    </article></div>
+  </section>
+  <section class="quarter" id="q-2025-q1" data-quarter="2025 Q1">
+    <div class="qhead mono"><span class="qname">Q1</span><span class="qcount">14 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-80588" data-sector="medical-devices" data-methods="customer-satisfaction needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Mar 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Blood Bank Voice-of-Customer Survey on Whole-Blood Processing and Supplies</h3>
+        <p class="who">Medical, laboratory, and operations leaders at blood banks and hospital blood centers, as a supplier gauged appetite for automation and pricing for its collection supplies.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>insights team</div>
+    </article>
+    <article class="row" id="e-Proj-81734" data-sector="b2b-software" data-methods="usage-attitudes awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">customer insights</span><span class="muted">Mar 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Medical Student and Resident Survey on Clinical Reference Tools and Career Transitions</h3>
+        <p class="who">Late-stage medical students and residents across prescriber tracks, surveyed on tool discovery, transition struggles, and support needs as a clinical reference app targeted the next generation.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-81735" data-sector="food-beverage" data-methods="concept-test" data-adv="1">
+      <div class="c-meta mono"><span>food &amp; beverage</span><span class="muted">product innovation</span><span class="muted">Mar 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Specialty Cheese Snack Concepts: Screen and Price Ladder</h3>
+        <p class="who">Deli-counter specialty cheese buyers, screening new snack concepts against an existing benchmark product with a price ladder, ahead of a convenience-channel trade show.</p>
+        <div class="chips"><span class="chip mono">pricing</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>brand manager</div>
+    </article>
+    <article class="row" id="e-Proj-81790" data-sector="medical-devices" data-methods="awareness-trial-usage brand-positioning" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">brand strategy</span><span class="muted">Mar 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Ear and Nasal Care Products: Brand Awareness and Usage Study</h3>
+        <p class="who">Primary care and pediatric clinicians, advanced practice providers, and audiologists, surveyed as a single-use device maker worked to be seen as a full-line ENT supplier.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-81806" data-sector="industrial-manufacturing" data-methods="brand-positioning buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">brand strategy</span><span class="muted">Mar 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Compact Construction Equipment Brand Equity and Purchasing Survey</h3>
+        <p class="who">End-users and purchasers of skid steers, mini excavators, and compact track loaders in the US and Canada, baselining equity as a challenger manufacturer invested to double share.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-81807" data-sector="building-products-construction" data-methods="brand-positioning awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">brand strategy</span><span class="muted">Mar 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Aluminum Exterior Building Products: Brand Equity Study in the Canadian Trade</h3>
+        <p class="who">Architects, contractors, dealers, and buyers across Canada who specify metal siding, trim, and rainware, as flat unit sales made the maker question whether to defend share or diversify.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product-line director</div>
+    </article>
+    <article class="row" id="e-Proj-82490" data-sector="food-beverage" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>food &amp; beverage</span><span class="muted">customer insights</span><span class="muted">Mar 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Frozen Meatball Shoppers: Attitudes and Usage Study</h3>
+        <p class="who">Grocery decision-makers who bought frozen meatballs recently, across grocery and warehouse-club channels, giving the maker its first quantitative read of category position.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>insights manager</div>
+    </article>
+    <article class="row" id="e-Proj-80471" data-sector="building-products-construction" data-methods="usage-attitudes buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Feb 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Homeowner Siding Materials: Attitudes and Usage Survey</h3>
+        <p class="who">Homeowners who bought or plan to buy siding, surveyed as the demand-side companion to a contractor study while the maker updated its vinyl line against composites.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-80589" data-sector="building-products-construction" data-methods="usage-attitudes concept-test" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Feb 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Kitchen Designer Perceptions and Preferences for Oak Cabinetry</h3>
+        <p class="who">Interior designers whose work is mostly kitchens, asked how oak sells against maple, cherry, and painted finishes as a cabinetry manufacturer weighed adding an oak line.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-81557" data-sector="b2b-software" data-methods="needs-assessment buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">customer insights</span><span class="muted">Feb 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Healthcare Workforce Management Gap Survey for Thought Leadership</h3>
+        <p class="who">HR leaders at larger hospitals and academic medical centers, surveyed on the gap between wanted and installed capabilities to support a vendor's push into unified, enterprise-level selling.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-82369" data-sector="consumer-products" data-methods="concept-test other" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">product innovation</span><span class="muted">Feb 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Replacement Wiper Blades: In-Home Installation Usage Test</h3>
+        <p class="who">Vehicle owners who install their own wiper blades, fitting the maker's blades and two competitors after retailers flagged confusing packaging, adapters, and instructions.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-80467" data-sector="healthcare-services" data-methods="win-loss" data-adv="0">
+      <div class="c-meta mono"><span>healthcare services</span><span class="muted">customer insights</span><span class="muted">Jan 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Pharmacy Benefits Offering: Win-Loss Survey</h3>
+        <p class="who">Employer benefits leaders who recently evaluated pharmacy benefit managers, on why they chose or passed on a navigation-first offering.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-80579" data-sector="medical-devices" data-methods="brand-tracking awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">brand strategy</span><span class="muted">Jan 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Brand Awareness, Attitudes, and Usage Tracker for an Infection-Prevention Supplier</h3>
+        <p class="who">Reprocessing, infection prevention, and materials staff at hospitals and surgery centers, in a second wave measured against a baseline and meant to justify expanding the tracker abroad.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>digital marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-81523" data-sector="b2b-software" data-methods="awareness-trial-usage message-testing" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">market entry</span><span class="muted">Jan 2025</span></div>
+      <div class="c-study">
+        <h3 class="title">Clinical Reference App: Content Quality Perceptions and Generative AI Usage Survey</h3>
+        <p class="who">Physicians, nurse practitioners, and physician assistants on the app's user list, asked how they judge its editorial content and how they use generative AI at work.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing manager</div>
+    </article></div>
+  </section>
+</section>
+<section class="year" id="y-2024" data-year="2024">
+  <div class="yhead">
+    <div class="yname mono">2024</div>
+    <div class="ymeta mono"><span class="ycount">68 engagements</span><span class="yadv"> · 12 with advanced analytics</span></div>
+  </div>
+  <div class="colhead mono"><div>Sector / solution / delivered</div><div>Study / who answered / technique</div><div>Client counterpart</div></div>
+  
+  <section class="quarter" id="q-2024-q4" data-quarter="2024 Q4">
+    <div class="qhead mono"><span class="qname">Q4</span><span class="qcount">22 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-79461" data-sector="media-entertainment" data-methods="customer-satisfaction brand-positioning" data-adv="0">
+      <div class="c-meta mono"><span>media &amp; entertainment</span><span class="muted">customer insights</span><span class="muted">Dec 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Staffing Agency Ratings Among Travel Healthcare Professionals: Recognition Survey</h3>
+        <p class="who">Traveling clinicians and allied health professionals, rating the staffing agencies they had recently worked with so an industry community could recognize top performers.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>founder or CEO</div>
+    </article>
+    <article class="row" id="e-Proj-80296" data-sector="food-beverage" data-methods="concept-test" data-adv="0">
+      <div class="c-meta mono"><span>food &amp; beverage</span><span class="muted">product innovation</span><span class="muted">Dec 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Resealable Carton Cap: Organic Milk Packaging Concept Test</h3>
+        <p class="who">Organic milk buyers in the dairy's home region, comparing the current carton against a capped version monadically and side by side, with a readable cut of the dairy's own customers.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>vice president</div>
+    </article>
+    <article class="row" id="e-Proj-80298" data-sector="industrial-manufacturing" data-methods="conjoint pricing" data-adv="1">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">product innovation</span><span class="muted">Dec 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Industrial Diaphragm Pump Conjoint on Product and Service Attributes</h3>
+        <p class="who">Procurement, maintenance, and engineering buyers of industrial pumps across global regions, as a category leader trimmed low-value options during a product-line refresh.</p>
+        <div class="chips"><span class="chip mono">conjoint</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>pricing lead</div>
+    </article>
+    <article class="row" id="e-Proj-80468" data-sector="medical-devices" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Dec 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Single-Use Surgical Positioning Supplies: Expectations Survey</h3>
+        <p class="who">Operating-room staff and hospital purchasers of single-use positioning supplies, scoped ahead of a consumables strategy for a surgical-equipment maker.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing operations manager</div>
+    </article>
+    <article class="row" id="e-Proj-80590" data-sector="professional-services" data-methods="usage-attitudes other" data-adv="0">
+      <div class="c-meta mono"><span>professional services</span><span class="muted">market entry</span><span class="muted">Dec 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Founder Sentiment Pulse Survey for a Startup Accelerator</h3>
+        <p class="who">Founders in the current cohort of a startup accelerator, polled on outlook, hours, AI, and relocation plans to seed a season's worth of media and social content.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>head of brand and communications</div>
+    </article>
+    <article class="row" id="e-Proj-81607" data-sector="industrial-manufacturing" data-methods="market-sizing needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Dec 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Frozen-Beverage Equipment Downtime: Opportunity Sizing Survey</h3>
+        <p class="who">Owners, managers, and technicians at convenience stores, gas stations, and quick-service outlets, validating whether defrost downtime is a pain worth paying to remove.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of product management</div>
+    </article>
+    <article class="row" id="e-Proj-79284" data-sector="industrial-manufacturing" data-methods="customer-satisfaction" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Nov 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Pet-Food Ingredient Supplier: Customer Satisfaction and Loyalty Survey</h3>
+        <p class="who">R&amp;D, innovation, and food-science staff at pet-food manufacturers on the supplier's customer list, in a repeat satisfaction wave built to compare with an earlier study.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing and innovation director</div>
+    </article>
+    <article class="row" id="e-Proj-79380" data-sector="industrial-manufacturing" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Nov 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Backup Diesel Generator Fuel-Filter Needs Assessment</h3>
+        <p class="who">Facilities staff at data centers, hospitals, and cold-storage sites across several countries, surveyed on filter installs, providers, and unmet needs as an industrial filter maker sized a new application.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>global marketing and strategy lead</div>
+    </article>
+    <article class="row" id="e-Proj-79542" data-sector="medical-devices" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Nov 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Radiation Therapy Accessories: Purchase-Journey and Decision-Maker Study</h3>
+        <p class="who">Radiation therapists, physicians, dosimetrists, physicists, and purchasing staff at cancer centers, surveyed to settle who actually drives purchases of patient marking and immobilization supplies.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-79543" data-sector="food-beverage" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>food &amp; beverage</span><span class="muted">customer insights</span><span class="muted">Nov 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Specialty Cheese Shopper Path-to-Purchase Study</h3>
+        <p class="who">Primary grocery shoppers who buy specialty cheese, surveyed in the producer's first study on the journey from trigger to basket and where category whitespace might sit.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>brand manager</div>
+    </article>
+    <article class="row" id="e-Proj-80294" data-sector="industrial-manufacturing" data-methods="buyer-journey needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Nov 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Outdoor Power Equipment Decision-Making Among Very Small Landscape Businesses</h3>
+        <p class="who">Owners and buyers at landscaping and grounds businesses with five or fewer employees, a segment an engine manufacturer knew far less well than its large accounts.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of product management and marketing</div>
+    </article>
+    <article class="row" id="e-Proj-80396" data-sector="b2b-software" data-methods="customer-satisfaction other" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">customer insights</span><span class="muted">Nov 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Customer Survey on Annual User Conference Attendance and Non-Attendance</h3>
+        <p class="who">Customer contacts of a transportation-technology vendor, asked why a large share never attend its well-regarded annual user conference.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing communications director</div>
+    </article>
+    <article class="row" id="e-Proj-80469" data-sector="industrial-manufacturing" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Nov 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Automotive Air-Conditioning Service Tools: Innovation Needs Study</h3>
+        <p class="who">Automotive service technicians who work on vehicle air conditioning, asked where current service tools fall short to direct new development.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>founder or CEO</div>
+    </article>
+    <article class="row" id="e-Proj-80470" data-sector="industrial-manufacturing" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Nov 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Residential HVAC Technician Expectations Survey</h3>
+        <p class="who">Residential heating and cooling service technicians, on what they expect from diagnostic and service tools, for a service-equipment manufacturer.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>founder or CEO</div>
+    </article>
+    <article class="row" id="e-Proj-78341" data-sector="medical-devices" data-methods="customer-satisfaction" data-adv="1">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Oct 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Customer Sentiment Baseline for a Blood-Center Equipment Supplier</h3>
+        <p class="who">Existing customers at hospitals, blood centers, and specimen collectors, recruited from the supplier's own lists to set a first-year benchmark for satisfaction and loyalty tracking.</p>
+        <div class="chips"><span class="chip mono">key driver</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>insights team</div>
+    </article>
+    <article class="row" id="e-Proj-78401" data-sector="industrial-manufacturing" data-methods="buyer-journey awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Oct 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Industrial Buyers' Media and Information Habits: Top-of-Funnel Marketing Survey</h3>
+        <p class="who">Engineers, procurement, and operations decision-makers in the distributor's priority verticals, drawn from customer and prospect lists to reveal which media, sources, and trade shows actually reach them.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>chief marketing officer</div>
+    </article>
+    <article class="row" id="e-Proj-78466" data-sector="medical-devices" data-methods="conjoint pricing buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Oct 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Capital-Equipment Path to Purchase for a New Surgical-Table Platform</h3>
+        <p class="who">Surgeons, operating-room staff, and purchasing influencers at hospitals and surgery centers, mapping who decides and what persuades them as a new surgical table neared launch.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing operations manager</div>
+    </article>
+    <article class="row" id="e-Proj-78847" data-sector="building-products-construction" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Oct 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Plumbing Accessories Path-to-Purchase and Stakeholder Survey</h3>
+        <p class="who">Plumbers, installers, and specifiers who buy behind-the-wall plumbing products, surveyed as a piping maker sought to lift its small share of the accessories its own systems require.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product-line manager</div>
+    </article>
+    <article class="row" id="e-Proj-78854" data-sector="building-products-construction" data-methods="usage-attitudes market-sizing" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Oct 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Homeowner Perceptions and Path to Purchase for Ready-to-Assemble Kitchen Cabinetry</h3>
+        <p class="who">Homeowners who bought kitchen cabinetry in the past three years, ready-to-assemble or traditional, surveyed as a cabinetry manufacturer decided whether to answer retailers' growing ready-to-assemble programs.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-79230" data-sector="insurance" data-methods="brand-tracking awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>insurance</span><span class="muted">brand strategy</span><span class="muted">Oct 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Brand Awareness, Attitudes, and Usage Tracker Among Military Families</h3>
+        <p class="who">Active-duty, retired, and veteran service members and their families in key states, in a recurring tracking wave compared against prior waves for a member-owned life insurer.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-79536" data-sector="nonprofit-associations" data-methods="segmentation" data-adv="1">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">customer insights</span><span class="muted">Oct 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Charitable-Giver Segmentation Study for an Education Nonprofit</h3>
+        <p class="who">US adults who gave to charity in the past year, plus the nonprofit's own supporters, segmented to find giver personas beyond its current core constituency.</p>
+        <div class="chips"><span class="chip mono">segmentation</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>communications director</div>
+    </article>
+    <article class="row" id="e-Proj-79579" data-sector="industrial-manufacturing" data-methods="pricing" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">product innovation</span><span class="muted">Oct 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Premium Ceiling Fan Pricing and Elasticity Survey Among Homeowners</h3>
+        <p class="who">Affluent homeowners who recently bought a ceiling fan and do not shop on price alone, surveyed after a run of pricing changes to find where value holds.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product manager</div>
+    </article></div>
+  </section>
+  <section class="quarter" id="q-2024-q3" data-quarter="2024 Q3">
+    <div class="qhead mono"><span class="qname">Q3</span><span class="qcount">19 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-78865" data-sector="building-products-construction" data-methods="buyer-journey usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Sep 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Conduit Strap Usage and Purchasing Survey Among Electricians</h3>
+        <p class="who">Electricians, handymen, and contractors buying at distributors or big-box stores, asked about substrates and conduit sizes to validate assumptions before a premium strap launch.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-79271" data-sector="building-products-construction" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Sep 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Fire-Protection and MEP Anchorage: Customer Needs Assessment</h3>
+        <p class="who">Engineers, contractors, inspectors, and procurement specialists who specify anchorage for commercial buildings, surveyed as the manufacturer reworked a long-held but under-marketed product line to take share.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product-line director</div>
+    </article>
+    <article class="row" id="e-Proj-76953" data-sector="industrial-manufacturing" data-methods="pricing concept-test" data-adv="1">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Aug 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Plastics Welding Equipment: Competitive Price Ladder and Shelf Test</h3>
+        <p class="who">Engineers, buyers, and plant managers at OEMs and end users across automotive, medical, electronics, and packaging, as the maker tested whether successive price increases had priced it out.</p>
+        <div class="chips"><span class="chip mono">pricing</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>market research manager</div>
+    </article>
+    <article class="row" id="e-Proj-77644" data-sector="nonprofit-associations" data-methods="usage-attitudes" data-adv="1">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">customer insights</span><span class="muted">Aug 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Preschool Selection Attitudes and Usage Survey for an Urban Cultural Institution</h3>
+        <p class="who">Current and prospective parents of preschool-age children in a major metro, surveyed to test demand for an additional campus and lift enrollment where seats sat open.</p>
+        <div class="chips"><span class="chip mono">segmentation</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing VP</div>
+    </article>
+    <article class="row" id="e-Proj-78083" data-sector="industrial-manufacturing" data-methods="brand-positioning usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Aug 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Zero-Turn Mower Buyer Journey and Perceptions Survey</h3>
+        <p class="who">Homeowners who bought a riding or zero-turn mower in recent years, on why they shifted formats and power sources, so a powertrain supplier could brief its equipment-maker and retail partners.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product and marketing VP</div>
+    </article>
+    <article class="row" id="e-Proj-78395" data-sector="food-beverage" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>food &amp; beverage</span><span class="muted">customer insights</span><span class="muted">Aug 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Halal Packaged Meats Attitudes and Usage Survey</h3>
+        <p class="who">Halal-observant grocery decision-makers in the United States who buy packaged meats, surveyed on certification, strictness, and shopping habits as a deli-meat producer planned its expansion into the market.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>senior marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-78760" data-sector="b2b-software" data-methods="needs-assessment" data-adv="1">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">product innovation</span><span class="muted">Aug 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Feature-Importance MaxDiff for a Web-Based Freight Brokerage Platform</h3>
+        <p class="who">Key users of a transportation-management vendor's brokerage product, ranking prospective features so the roadmap for the web version could be reset before the annual user conference.</p>
+        <div class="chips"><span class="chip mono">MaxDiff</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-78762" data-sector="building-products-construction" data-methods="usage-attitudes brand-positioning" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Aug 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Residential Siding Materials: Contractor Attitudes and Usage Survey</h3>
+        <p class="who">Contractors, remodelers, and builders who install residential siding, probed on what tips them between vinyl and composite as the manufacturer reworked a vinyl plank product.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-78855" data-sector="b2b-software" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">brand strategy</span><span class="muted">Aug 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Clinical Reference App Brand Tracker: Multi-Year Dashboard Extension</h3>
+        <p class="who">Clinicians surveyed in earlier waves of the brand equity tracker, folded into the delivered dashboard so marketing could read the trend line further back.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>segment marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-78961" data-sector="food-beverage" data-methods="maxdiff concept-test" data-adv="1">
+      <div class="c-meta mono"><span>food &amp; beverage</span><span class="muted">product innovation</span><span class="muted">Aug 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Snack Nut and Trail Mix Variety MaxDiff and TURF Study</h3>
+        <p class="who">Grocery shoppers who buy snack nuts or trail mix, ranking flavors and varieties so a private-label snack maker could find the assortment that maximizes reach.</p>
+        <div class="chips"><span class="chip mono">MaxDiff</span><span class="chip mono">TURF</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-79115" data-sector="medical-devices" data-methods="conjoint pricing" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">product innovation</span><span class="muted">Aug 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Surgical Table Pricing Conjoint: Additional Market Simulation</h3>
+        <p class="who">Surgeons and hospital purchasing staff from an earlier pricing conjoint on a surgical positioning platform, re-simulated for one added market scenario with deck updates.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing operations manager</div>
+    </article>
+    <article class="row" id="e-Proj-79116" data-sector="industrial-manufacturing" data-methods="awareness-trial-usage buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">brand strategy</span><span class="muted">Aug 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Follow-On Cuts: Ceiling Fan Awareness and Path-to-Purchase Study</h3>
+        <p class="who">Homeowners and professionals who buy a premium ceiling fan, revisited with additional segmented crosstabs from an earlier awareness and purchase-journey study.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-74846" data-sector="medical-devices" data-methods="conjoint pricing" data-adv="1">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">product innovation</span><span class="muted">Jul 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Choice-Based Conjoint and Price-Ladder Study for a Next-Generation Hip and Trauma Surgical Table</h3>
+        <p class="who">Surgeons, OR staff, and hospital and surgery-center administrators who weigh in on capital purchases, trading off features, price, and consumables terms for a table still in development.</p>
+        <div class="chips"><span class="chip mono">conjoint</span><span class="chip mono">pricing</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing operations manager</div>
+    </article>
+    <article class="row" id="e-Proj-76309" data-sector="healthcare-services" data-methods="market-sizing usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>healthcare services</span><span class="muted">market entry</span><span class="muted">Jul 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Healthcare Waste Volumes Versus Clinical Activity: Hospital Operations Survey</h3>
+        <p class="who">Operations, environmental-services, and facilities leaders at large hospitals, asked why regulated waste volumes had lagged patient and procedure counts and how sustainability efforts figured in.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product management director</div>
+    </article>
+    <article class="row" id="e-Proj-77181" data-sector="consumer-products" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">customer insights</span><span class="muted">Jul 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Rifle Scope Path-to-Purchase and Brand Loyalty Study</h3>
+        <p class="who">Hunters and shooting enthusiasts who recently bought a rifle scope, surveyed on loyalty and price-tier movement as an optics maker sorted out overlap between two of its labels.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-77185" data-sector="b2b-software" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">brand strategy</span><span class="muted">Jul 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Clinical Reference App: Annual Brand Equity Tracker</h3>
+        <p class="who">Physicians, nurses, advanced practitioners, and pharmacists who use point-of-care reference apps, in the fourth annual wave of a brand equity tracker re-run unchanged after a brand relaunch.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>segment marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-77221" data-sector="building-products-construction" data-methods="needs-assessment brand-positioning" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">market entry</span><span class="muted">Jul 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Electrician Buying Habits Through Electrical Distributors: Path-to-Purchase Survey</h3>
+        <p class="who">Electricians and electrical contractors who buy mainly through distributors, surveyed on pack sizes, order habits, and counter experience as a fittings maker leaned on that channel for growth.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-77908" data-sector="building-products-construction" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Jul 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Residential Mailbox Path-to-Purchase Survey</h3>
+        <p class="who">Homeowners who recently bought or plan to buy a curbside or wall-mount mailbox, surveyed as the manufacturer weighed selling direct alongside its retail channels.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-78044" data-sector="nonprofit-associations" data-methods="usage-attitudes segmentation" data-adv="0">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">customer insights</span><span class="muted">Jul 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Follow-On Segmentation: Fitness Attitudes and Usage by Member Experience</h3>
+        <p class="who">Members, lapsed members, and prospects of a cultural nonprofit's fitness facility, re-cut by membership experience to sharpen programming and retention decisions.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of marketing</div>
+    </article></div>
+  </section>
+  <section class="quarter" id="q-2024-q2" data-quarter="2024 Q2">
+    <div class="qhead mono"><span class="qname">Q2</span><span class="qcount">17 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-76907" data-sector="building-products-construction" data-methods="segmentation buyer-journey" data-adv="1">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Jun 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Residential Plumber Buyer Personas for a Water-Heater Manufacturer</h3>
+        <p class="who">Residential plumbers who install gas water heaters, clustered into younger and older personas as an aging installer base pushed the manufacturer to court the next generation.</p>
+        <div class="chips"><span class="chip mono">segmentation</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product management director</div>
+    </article>
+    <article class="row" id="e-Proj-76994" data-sector="food-beverage" data-methods="segmentation usage-attitudes" data-adv="1">
+      <div class="c-meta mono"><span>food &amp; beverage</span><span class="muted">customer insights</span><span class="muted">Jun 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Cheese Shopper Persona Segmentation Study</h3>
+        <p class="who">Midwestern grocery decision-makers who bought cheese recently, clustered into personas so a cheese maker could tailor product development and messaging by segment.</p>
+        <div class="chips"><span class="chip mono">segmentation</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing and trade director</div>
+    </article>
+    <article class="row" id="e-Proj-76995" data-sector="professional-services" data-methods="market-sizing needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>professional services</span><span class="muted">market entry</span><span class="muted">Jun 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Small-Business Document Shredding Demand Study</h3>
+        <p class="who">Decision-makers at small and mid-size businesses that buy third-party shredding, re-fielding a pandemic-era survey to reset expectations for paper use and near-term demand.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product and innovation VP</div>
+    </article>
+    <article class="row" id="e-Proj-74934" data-sector="telecom" data-methods="brand-positioning message-testing" data-adv="0">
+      <div class="c-meta mono"><span>telecom</span><span class="muted">brand strategy</span><span class="muted">May 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Household Reactions to a Proposed Rebrand for a Rural Broadband Provider</h3>
+        <p class="who">Rural and suburban households that use or consider a rural broadband service, testing whether proposed new positioning lands before it went to market.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-75995" data-sector="building-products-construction" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">May 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Homeowner Path-to-Purchase Study for Toilets Bought at Big-Box Retailers</h3>
+        <p class="who">Homeowners who bought a toilet from a home center in the past two years, both do-it-yourself and hire-it-out, so a plumbing-parts maker could align its line with end-consumer demand.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>head of global marketing</div>
+    </article>
+    <article class="row" id="e-Proj-76114" data-sector="building-products-construction" data-methods="concept-test usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">product innovation</span><span class="muted">May 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Mix-and-Match Cabinetry Merchandising: Shopper Concept Test</h3>
+        <p class="who">Recent kitchen and bath remodelers who shop a big-box retailer, comparing a mix-and-match door-and-finish display against the fixed-combination status quo as a cabinet maker weighed retooling its in-store program.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-76115" data-sector="medical-devices" data-methods="awareness-trial-usage brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">brand strategy</span><span class="muted">May 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Infection-Prevention Brand Awareness, Attitudes and Usage Baseline</h3>
+        <p class="who">Infection-control, central-supply, and purchasing staff at hospitals and surgery centers, in a baseline wave meant to prove the case for tracking brand health across regions.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>digital marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-76220" data-sector="building-products-construction" data-methods="awareness-trial-usage buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">May 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Ceiling Fan Awareness, Usage, and Path-to-Purchase Study Among Quality-Focused Buyers</h3>
+        <p class="who">Step-up homeowners and the architects and interior designers who specify ceiling fans without price as the lead factor, surveyed as the maker extended a premium line into residential.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>senior marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-76484" data-sector="consumer-products" data-methods="usage-attitudes concept-test" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">customer insights</span><span class="muted">May 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Battery Mower Buyers: Purchase Drivers and Satisfaction Survey</h3>
+        <p class="who">Homeowners who bought a battery-powered mower in recent years, surveyed as an engine maker read how much of that shift was price, availability, or genuine preference.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of product management and marketing</div>
+    </article>
+    <article class="row" id="e-Proj-76490" data-sector="building-products-construction" data-methods="customer-satisfaction needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">May 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Contractor Loyalty Program Landscape and Preferences Study</h3>
+        <p class="who">Roofing and siding contractors who belong to a manufacturer loyalty program, surveyed after a desk review of competitor programs as a building-materials maker designed its own from scratch.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>strategy and business development director</div>
+    </article>
+    <article class="row" id="e-Proj-77361" data-sector="medical-devices" data-methods="conjoint pricing" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">product innovation</span><span class="muted">May 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Follow-On Analysis: Conjoint Study for a Hospital Surface Disinfectant</h3>
+        <p class="who">Infection prevention and purchasing staff at hospitals and clinics, with follow-up cuts of a conjoint on disinfectant wipes before configuration and price were finalized.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-73210" data-sector="pharma-life-sciences" data-methods="conjoint pricing" data-adv="1">
+      <div class="c-meta mono"><span>pharma &amp; life sciences</span><span class="muted">product innovation</span><span class="muted">Apr 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Rapid Microbial Testing Instrument: Refresh-versus-New Conjoint</h3>
+        <p class="who">Lab and operations staff who run microbial testing in industrial and utility settings, including beta users, as the maker chose between refreshing its instrument or launching an all-new one.</p>
+        <div class="chips"><span class="chip mono">conjoint</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing communications director</div>
+    </article>
+    <article class="row" id="e-Proj-75317" data-sector="medical-devices" data-methods="conjoint pricing" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">product innovation</span><span class="muted">Apr 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Healthcare Surface-Disinfectant Wipes: Launch Conjoint and Pricing Study</h3>
+        <p class="who">Infection-prevention and purchasing staff at healthcare facilities, surveyed ahead of a new wipes launch into a crowded category held by established brands.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-75581" data-sector="nonprofit-associations" data-methods="usage-attitudes needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">customer insights</span><span class="muted">Apr 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Fitness Attitudes and Usage Study for a Nonprofit's Membership Fitness Offering</h3>
+        <p class="who">Current and prospective members plus city residents who belong to or would consider a gym, surveyed as a cultural nonprofit set budgets, pricing, and programming for its fitness facility.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-75583" data-sector="b2b-software" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">customer insights</span><span class="muted">Apr 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Medical Staff Credentialing Software: Needs and Buying Criteria Survey</h3>
+        <p class="who">Credentialing, enrollment, and medical-staff-services leaders at large hospitals, the mid-level buyers who had resisted a workforce software vendor's newer credentialing product.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-75656" data-sector="building-products-construction" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Apr 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Sump and Utility Pump Path-to-Purchase Study</h3>
+        <p class="who">DIY homeowners and plumbing professionals who recently bought basement or utility pumps, mapped from trigger to purchase so the manufacturer could weigh brand, retailer, and feature influence.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-77084" data-sector="b2b-software" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">customer insights</span><span class="muted">Apr 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Follow-On Cuts: Credentialing Software Needs Assessment</h3>
+        <p class="who">Credentialing and workforce administrators at hospitals and physician groups, revisited with additional segmented crosstabs at the client's request.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article></div>
+  </section>
+  <section class="quarter" id="q-2024-q1" data-quarter="2024 Q1">
+    <div class="qhead mono"><span class="qname">Q1</span><span class="qcount">10 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-73229" data-sector="nonprofit-associations" data-methods="other" data-adv="0">
+      <div class="c-meta mono"><span>nonprofit &amp; associations</span><span class="muted">market entry</span><span class="muted">Mar 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Member Data Collection on Employee Relocation Volumes and Distances</h3>
+        <p class="who">Relocation management firms within a workforce-mobility association's membership, reporting move counts and distances to ground the association's policy advocacy on qualifying move distance.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of member engagement</div>
+    </article>
+    <article class="row" id="e-Proj-74381" data-sector="medical-devices" data-methods="segmentation needs-assessment" data-adv="1">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Mar 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Stakeholder Segmentation for a New Specialty Surgical-Table Platform</h3>
+        <p class="who">Surgeons, operating-room managers, and purchasing influencers, segmented by needs and adoption attitudes ahead of a new surgical-table platform launch and a planned pricing study.</p>
+        <div class="chips"><span class="chip mono">segmentation</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing operations manager</div>
+    </article>
+    <article class="row" id="e-Proj-74849" data-sector="medical-devices" data-methods="awareness-trial-usage usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Mar 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Clinician Awareness and Usage Survey for Non-Invasive Cancer Screening Tests</h3>
+        <p class="who">Primary care and specialist clinicians who order routine cancer screenings, surveyed as a diagnostics maker positioned an established low-cost test against newer, heavily marketed alternatives.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-74997" data-sector="healthcare-services" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>healthcare services</span><span class="muted">customer insights</span><span class="muted">Mar 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Independent Pharmacy Owners: Franchise-Partner Needs Assessment</h3>
+        <p class="who">Owners and head pharmacists at independent pharmacies, members and non-members alike, surveyed as a franchise network rethought which support services earn their keep.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>strategic marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-75318" data-sector="b2b-software" data-methods="needs-assessment usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">customer insights</span><span class="muted">Mar 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Jobs-to-Be-Done Survey for a Mobile Clinical Reference App</h3>
+        <p class="who">Practicing clinicians, asked which jobs they hire a clinical reference app to do and where satisfaction lags, as the app's owner pushed to grow with younger clinicians.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-75546" data-sector="transportation-logistics" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>transportation &amp; logistics</span><span class="muted">customer insights</span><span class="muted">Mar 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">E-Commerce Shipping Needs Survey Among Large Online Retailers</h3>
+        <p class="who">Supply-chain and logistics directors at large online retailers, asked about carrier capacity, rate increases, and unmet needs to ground a parcel carrier's opportunity presentation.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>growth marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-75547" data-sector="transportation-logistics" data-methods="needs-assessment usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>transportation &amp; logistics</span><span class="muted">customer insights</span><span class="muted">Mar 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Online Shopper Delivery Expectations Survey</h3>
+        <p class="who">US adults who shop online, in a refreshed wave of a recurring study that a regional parcel carrier uses to brief retail clients on delivery expectations.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>growth marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-70841" data-sector="healthcare-services" data-methods="concept-test pricing" data-adv="0">
+      <div class="c-meta mono"><span>healthcare services</span><span class="muted">product innovation</span><span class="muted">Feb 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Hospital Plastics Recycling Service: Demand and Willingness-to-Pay Test</h3>
+        <p class="who">Waste-management decision-makers at large hospitals and surgery centers, testing demand and pricing for recycling service packages before a new service line launched.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product-innovation director</div>
+    </article>
+    <article class="row" id="e-Proj-74847" data-sector="building-products-construction" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Feb 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">MEP and Fire-Protection Anchorage: Customer Needs Assessment Design</h3>
+        <p class="who">Engineers, contractors, inspectors, and procurement specialists who specify anchorage for commercial buildings, in the first design of a survey meant to reposition a long-held but under-marketed product line.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product-line director</div>
+    </article>
+    <article class="row" id="e-Proj-73298" data-sector="building-products-construction" data-methods="buyer-journey usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Jan 2024</span></div>
+      <div class="c-study">
+        <h3 class="title">Remote Roof-Measurement Software: Path to Purchase Among Independent Contractors</h3>
+        <p class="who">Independent roofing contractors who had recently bought or planned to buy remote measurement software, studied as a building-products maker weighed new retail channels for its own tool.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>market insights manager</div>
+    </article></div>
+  </section>
+</section>
+<section class="year" id="y-2023" data-year="2023">
+  <div class="yhead">
+    <div class="yname mono">2023</div>
+    <div class="ymeta mono"><span class="ycount">27 engagements</span><span class="yadv"> · 2 with advanced analytics</span></div>
+  </div>
+  <div class="colhead mono"><div>Sector / solution / delivered</div><div>Study / who answered / technique</div><div>Client counterpart</div></div>
+  
+  <section class="quarter" id="q-2023-q4" data-quarter="2023 Q4">
+    <div class="qhead mono"><span class="qname">Q4</span><span class="qcount">11 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-73715" data-sector="consumer-products" data-methods="concept-test" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">product innovation</span><span class="muted">Dec 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Premium Electric Grill Line: Concept and Price Test</h3>
+        <p class="who">Backyard grill owners and intenders, shown full-size electric grill concepts and accessory kits as the maker prepared a premium launch under a new label.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing team</div>
+    </article>
+    <article class="row" id="e-Proj-74277" data-sector="medical-devices" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Dec 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Refield Wave: Hospital Staff Preferences for Equipment Instructions Delivery</h3>
+        <p class="who">Operating-room staff and equipment coordinators, re-fielded with added incentive budget after initial results convinced the manufacturer it needed a larger sample.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing operations manager</div>
+    </article>
+    <article class="row" id="e-Proj-74278" data-sector="medical-devices" data-methods="usage-attitudes needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">market entry</span><span class="muted">Dec 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Hip and Spine Surgical Table Preferences: Follow-on Analysis by Surgeon Type</h3>
+        <p class="who">Hip and spine surgeons from an earlier survey on which table platforms they use and why they pick competitors, re-cut by surgeon specialty for key slides.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing operations manager</div>
+    </article>
+    <article class="row" id="e-Proj-71597" data-sector="medical-devices" data-methods="usage-attitudes needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Nov 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Surgeon Platform Preferences and Switching Drivers for Hip and Spine Surgical Tables</h3>
+        <p class="who">Hip and spine surgeons, asked which table platforms they use by procedure and why they pick competitors, as a follow-on to an earlier user survey.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing operations manager</div>
+    </article>
+    <article class="row" id="e-Proj-71862" data-sector="building-products-construction" data-methods="usage-attitudes needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Nov 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Service-Truck Inventory Survey Among Plumbers</h3>
+        <p class="who">Truck-based residential and commercial plumbers, asked what they stock and use across categories, as a fittings maker mapped adjacent products for line expansion.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-72660" data-sector="building-products-construction" data-methods="needs-assessment buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Nov 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Homeowner Contractor Selection for Siding Projects: Decision-Journey Survey</h3>
+        <p class="who">Homeowners who recently re-sided or built a home, surveyed as an exterior building-products maker looked to become a better partner to its contractor customers.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of sales and marketing</div>
+    </article>
+    <article class="row" id="e-Proj-72963" data-sector="industrial-manufacturing" data-methods="buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Nov 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Semiconductor Equipment Purchasing: Path-to-Purchase Study for a Precision Components Maker</h3>
+        <p class="who">Engineers and purchasing staff at chip fabrication plants, surveyed by a component supplier that knew little about the end users of the machines it feeds.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-73299" data-sector="industrial-manufacturing" data-methods="needs-assessment" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">customer insights</span><span class="muted">Nov 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Last-Mile Carrier Needs Assessment for Multifamily Package Lockers</h3>
+        <p class="who">Delivery drivers and last-mile carrier managers, surveyed as a locker maker sought to understand why carriers bypass lockers and what would raise compliance.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-73562" data-sector="medical-devices" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Nov 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Hospital Staff Preferences for Receiving Equipment Instructions for Use</h3>
+        <p class="who">Operating-room staff and equipment coordinators at hospitals, surveyed on how they access instructions for use as the manufacturer weighed moving from discs and print to digital delivery.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing operations manager</div>
+    </article>
+    <article class="row" id="e-Proj-73807" data-sector="b2b-software" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">market entry</span><span class="muted">Nov 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Annual Media Habits Survey of Trucking and Logistics Customers</h3>
+        <p class="who">Trucking and logistics operators on the vendor's customer list, in a yearly pulse of where they get industry news to steer marketing channel spend.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing communications director</div>
+    </article>
+    <article class="row" id="e-Proj-71182" data-sector="medical-devices" data-methods="concept-test pricing" data-adv="1">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">product innovation</span><span class="muted">Oct 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">International Concept and Price-Ladder Test for a Data-Management Add-On to Clinical Equipment</h3>
+        <p class="who">Procurement, IT, and executive buyers at hospitals and specialty clinical facilities across several world regions, reacting to configurations and an implementation fee for a software add-on before launch pricing was set.</p>
+        <div class="chips"><span class="chip mono">pricing</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing director</div>
+    </article></div>
+  </section>
+  <section class="quarter" id="q-2023-q3" data-quarter="2023 Q3">
+    <div class="qhead mono"><span class="qname">Q3</span><span class="qcount">10 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-71126" data-sector="medical-devices" data-methods="concept-test usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">Sep 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Hospital Critical-Care Equipment: Digital Service Concept Test</h3>
+        <p class="who">Procurement and clinical decision-makers who buy intensive-care dialysis systems for hospitals, testing a proposed digital service alongside broader attitudes toward connected services.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product-unit VP</div>
+    </article>
+    <article class="row" id="e-Proj-72777" data-sector="consumer-products" data-methods="pricing concept-test" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">product innovation</span><span class="muted">Sep 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Follow-On Analysis: Trade Pricing Study for an Entry-Priced Kitchen Sink Appliance</h3>
+        <p class="who">Plumbers and installers who buy kitchen sink appliances, with follow-up cuts of an entry-price study to close remaining questions before a budget-line launch.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product innovation director</div>
+    </article>
+    <article class="row" id="e-Proj-71565" data-sector="consumer-products" data-methods="pricing concept-test" data-adv="0">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">product innovation</span><span class="muted">Aug 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Opening-Price-Point Under-Sink Kitchen Appliance: Homeowner Pricing Study</h3>
+        <p class="who">Homeowners who buy or replace under-sink kitchen appliances, split by income to test whether a budget line wins value shoppers or cannibalizes the premium range.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product planning director</div>
+    </article>
+    <article class="row" id="e-Proj-71566" data-sector="consumer-products" data-methods="pricing concept-test" data-adv="1">
+      <div class="c-meta mono"><span>consumer products</span><span class="muted">product innovation</span><span class="muted">Aug 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Entry-Price Kitchen Appliance Line: Trade Installer Pricing Study</h3>
+        <p class="who">Plumbers and installers who buy kitchen sink appliances, surveyed as the manufacturer weighed an entry-price line against the risk of cannibalizing its premium range.</p>
+        <div class="chips"><span class="chip mono">conjoint</span></div>
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product-planning director</div>
+    </article>
+    <article class="row" id="e-Proj-71737" data-sector="building-products-construction" data-methods="customer-satisfaction" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Aug 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Dealer and Builder Ease-of-Doing-Business Survey for a Fenestration Manufacturer</h3>
+        <p class="who">Dealers and builders on the manufacturer's customer list, in the sixth annual wave of a service-experience survey run with an unchanged instrument.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>customer experience manager</div>
+    </article>
+    <article class="row" id="e-Proj-71866" data-sector="b2b-software" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">brand strategy</span><span class="muted">Aug 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Dashboard Extensions for a Clinician Brand Equity Tracker</h3>
+        <p class="who">Practicing clinicians who use mobile clinical reference tools, with added dashboard views so marketing could answer follow-up questions by segment after the annual wave.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-71870" data-sector="b2b-software" data-methods="win-loss" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">customer insights</span><span class="muted">Aug 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Win-Loss Questionnaire Redesign for a Mobile Forms Platform</h3>
+        <p class="who">Prospects and customers who recently chose or passed on a mobile forms platform, addressed through a rebuilt instrument the vendor would field itself with no analysis attached.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing director</div>
+    </article>
+    <article class="row" id="e-Proj-70463" data-sector="industrial-manufacturing" data-methods="pricing" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">product innovation</span><span class="muted">Jul 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Purified Utility Systems for Pharmaceutical Manufacturing: Pricing and Feature Value Study</h3>
+        <p class="who">Engineering and procurement leads at pharmaceutical plants and the design firms that serve them, surveyed as commoditization squeezed prices on a once-differentiated system line.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>vertical-market director</div>
+    </article>
+    <article class="row" id="e-Proj-70975" data-sector="b2b-software" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">brand strategy</span><span class="muted">Jul 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Clinician Brand Equity Tracker for a Mobile Clinical Reference App</h3>
+        <p class="who">Practicing clinicians who use mobile clinical reference tools, in the annual wave of an equity tracker and the first delivered as an interactive dashboard.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>product marketing manager</div>
+    </article>
+    <article class="row" id="e-Proj-71150" data-sector="b2b-software" data-methods="brand-tracking" data-adv="0">
+      <div class="c-meta mono"><span>B2B software</span><span class="muted">brand strategy</span><span class="muted">Jul 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Clinical Reference App: Brand Equity Survey</h3>
+        <p class="who">Practicing clinicians who use a mobile clinical reference app, in the latest wave of a recurring equity study and the first delivered as an interactive dashboard.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>marketing manager</div>
+    </article></div>
+  </section>
+  <section class="quarter" id="q-2023-q2" data-quarter="2023 Q2">
+    <div class="qhead mono"><span class="qname">Q2</span><span class="qcount">6 engagements</span></div>
+    <div class="rows">
+    <article class="row" id="e-Proj-69782" data-sector="building-products-construction" data-methods="needs-assessment buyer-journey" data-adv="0">
+      <div class="c-meta mono"><span>building products &amp; construction</span><span class="muted">customer insights</span><span class="muted">Jun 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Homeowner Contractor-Selection Study for Re-Roofing Projects</h3>
+        <p class="who">Homeowners who had recently completed a re-roofing project, asked how they chose their contractor so an exterior building-materials maker could sharpen how it supports and sells through the trade.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of sales and marketing</div>
+    </article>
+    <article class="row" id="e-Proj-69846" data-sector="industrial-manufacturing" data-methods="brand-tracking brand-positioning" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">brand strategy</span><span class="muted">Jun 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Private-Label Safety Supplies: Brand Equity Study</h3>
+        <p class="who">Buyers of safety supplies at manufacturing and maintenance operations, in the second of a series of equity studies across the distributor's house brands.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>customer and market intelligence director</div>
+    </article>
+    <article class="row" id="e-Proj-70403" data-sector="industrial-manufacturing" data-methods="customer-satisfaction brand-positioning" data-adv="0">
+      <div class="c-meta mono"><span>industrial &amp; manufacturing</span><span class="muted">brand strategy</span><span class="muted">Jun 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Distributor Satisfaction and Competitive Landscape Survey for Fluid-Handling Equipment</h3>
+        <p class="who">Distributors who resell a manufacturer's fluid-handling equipment, surveyed in a periodic wave so results could be trended against earlier years.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>VP of sales</div>
+    </article>
+    <article class="row" id="e-Proj-68993" data-sector="medical-devices" data-methods="awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">May 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Clinician Awareness, Trial and Usage Baseline for a Prescription Wearable Therapy</h3>
+        <p class="who">Specialist physicians who treat a movement disorder, benchmarked ahead of a next-generation product launch and designed to repeat twice a year.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>head of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-70367" data-sector="medical-devices" data-methods="awareness-trial-usage" data-adv="0">
+      <div class="c-meta mono"><span>medical devices</span><span class="muted">customer insights</span><span class="muted">May 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Follow-On Cuts: Clinician Awareness and Usage Baseline for a Prescription Wearable Therapy</h3>
+        <p class="who">Specialist physicians who treat a movement disorder, revisited with additional data cuts after the baseline awareness study.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>head of marketing</div>
+    </article>
+    <article class="row" id="e-Proj-69350" data-sector="pharma-life-sciences" data-methods="usage-attitudes" data-adv="0">
+      <div class="c-meta mono"><span>pharma &amp; life sciences</span><span class="muted">customer insights</span><span class="muted">Apr 2023</span></div>
+      <div class="c-study">
+        <h3 class="title">Anesthesiologist Practice Survey on Coagulation-Management Protocols</h3>
+        <p class="who">Practicing anesthesiologists reached through their professional society, as a follow-on to an earlier published practice survey with results again intended for publication.</p>
+        
+      </div>
+      <div class="c-cp mono"><span class="cplab ink">Client counterpart: </span>critical-care product director</div>
+    </article></div>
+  </section>
+</section></main>
+
+<footer><a href="./">Home</a> · <a href="./resume.html">Resume</a> · <a href="./process.html">Process</a> · <a href="./ai-tooling.html">AI Tooling</a></footer>
+</div>
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const sectorSel = $("#f-sector"), methodSel = $("#f-method");
+  const rows = [...document.querySelectorAll(".row")];
+  let pick = null; // a randomly chosen row, or null
+  const passAdv = (r) => !pick || r === pick;
+  function cascade() {
+    const s = sectorSel.value, m = methodSel.value;
+    const sectorsForM = new Set(rows.filter((r) => passAdv(r) && (!m || r.dataset.methods.split(" ").includes(m))).map((r) => r.dataset.sector));
+    const methodsForS = new Set(rows.filter((r) => passAdv(r) && (!s || r.dataset.sector === s)).flatMap((r) => r.dataset.methods.split(" ")));
+    [...sectorSel.options].forEach((o) => { o.disabled = !!o.value && !sectorsForM.has(o.value); o.hidden = o.disabled; });
+    [...methodSel.options].forEach((o) => { o.disabled = !!o.value && !methodsForS.has(o.value); o.hidden = o.disabled; });
+  }
+  function apply() {
+    const s = sectorSel.value, m = methodSel.value; let n = 0;
+    cascade();
+    rows.forEach((r) => {
+      const ok = passAdv(r) && (!s || r.dataset.sector === s) && (!m || r.dataset.methods.split(" ").includes(m));
+      r.classList.toggle("hidden", !ok); if (ok) n++;
+    });
+    document.querySelectorAll(".quarter").forEach((qs) => {
+      const vis = qs.querySelectorAll(".row:not(.hidden)").length;
+      qs.classList.toggle("hidden", !vis);
+      qs.querySelector(".qcount").textContent = vis + (vis === 1 ? " engagement" : " engagements");
+    });
+    document.querySelectorAll(".year").forEach((ys) => {
+      const vis = ys.querySelectorAll(".row:not(.hidden)").length;
+      ys.classList.toggle("hidden", !vis);
+      ys.querySelector(".ycount").textContent = vis + (vis === 1 ? " engagement" : " engagements");
+      const adv = ys.querySelectorAll(".row:not(.hidden)[data-adv='1']").length;
+      ys.querySelector(".yadv").textContent = adv ? " · " + adv + " with advanced analytics" : "";
+    });
+    $("#f-count").textContent = pick ? "1 of " + rows.length + ", at random" : n + " shown";
+    document.querySelectorAll("#jump a").forEach((a) => { a.style.display = document.querySelector("#y-" + a.dataset.y).classList.contains("hidden") ? "none" : ""; });
+  }
+  sectorSel.addEventListener("change", () => { pick = null; apply(); }); methodSel.addEventListener("change", () => { pick = null; apply(); });
+  const random = () => {
+    sectorSel.value = ""; methodSel.value = "";
+    pick = rows[Math.floor(Math.random() * rows.length)]; apply();
+    pick.scrollIntoView({ block: "center" });
+  };
+  $("#f-random").addEventListener("click", random);
+  $("#f-clear").addEventListener("click", () => { sectorSel.value = ""; methodSel.value = ""; pick = null; apply(); });
+  // Year jump list highlights the year in view.
+  const links = [...document.querySelectorAll("#jump a")];
+  const io = new IntersectionObserver((entries) => {
+    const vis = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+    if (!vis) return;
+    links.forEach((l) => l.classList.toggle("on", l.dataset.y === vis.target.dataset.year));
+  }, { rootMargin: "-120px 0px -60% 0px" });
+  document.querySelectorAll(".year").forEach((ys) => io.observe(ys));
+})();
+</script>
+</body>
+</html>

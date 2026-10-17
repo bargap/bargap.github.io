@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Process · Braden Agpoon</title>
+<meta name="description" content="How a custom survey research project runs from scoping to the final presentation, and what the Research Director does at each stage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#FAFAF7; --ink:#0E0E0E; --text:#2E2E2C; --muted:#6A6A66; --rule:#D8D8D3; --accent:#2A46C8; --on-accent:#FAFAF7;
+  --sans:"Work Sans","Helvetica Neue",Arial,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121315; --ink:#EEEDE8; --text:#CFCFC9; --muted:#8F8F89; --rule:#2E2F32; --accent:#8C9BFF; --on-accent:#121315;
+}}
+:root[data-theme="dark"]{
+  --bg:#121315; --ink:#EEEDE8; --text:#CFCFC9; --muted:#8F8F89; --rule:#2E2F32; --accent:#8C9BFF; --on-accent:#121315;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent)}
+a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;border:1.5px solid var(--ink);padding:12px 16px;margin-top:32px;flex-wrap:wrap}
+.nav .brand{font-family:var(--mono);font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.nav .brand a{color:inherit;border:0}
+.nav .brand span{color:var(--muted);text-transform:none;letter-spacing:.02em}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.nav li a{white-space:nowrap;color:var(--ink);padding:4px 0;display:inline-block;border:0}
+.nav li a.on{background:var(--accent);color:var(--on-accent);padding:4px 9px}
+.head{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:48px;padding:56px 0 36px;align-items:end}
+@media (max-width:860px){.head{grid-template-columns:1fr;gap:28px}}
+h1{font-weight:600;font-size:clamp(38px,5.2vw,60px);line-height:1.02;letter-spacing:-.03em;margin:0 0 18px;text-wrap:balance}
+.lede{font-size:17px;line-height:1.5;max-width:640px;margin:0 0 12px;text-wrap:pretty}
+.lede:last-child{margin-bottom:0}
+.toc{border:1.5px solid var(--ink);font-family:var(--mono);font-size:12px;line-height:1.6}
+.toc .lab{display:block;padding:9px 14px 8px;border-bottom:1.5px solid var(--ink);font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.toc ol{list-style:none;margin:0;padding:10px 14px 12px}
+.toc li a{color:var(--ink);border:0;display:flex;gap:10px;padding:2px 0}
+.toc li a:hover{color:var(--accent)}
+.toc li a span{color:var(--muted);min-width:2ch}
+main{padding:0 0 120px}
+.colhead{display:grid;grid-template-columns:200px minmax(0,1fr) 340px;gap:28px;padding:6px 0;border-top:2px solid var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.stage{display:grid;grid-template-columns:200px minmax(0,1fr) 340px;gap:28px;padding:22px 0 26px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.stage:target{outline:2px solid var(--accent);outline-offset:8px}
+.s-meta{display:flex;flex-direction:column;gap:4px}
+.s-num{font-size:34px;letter-spacing:-.02em;line-height:1;color:var(--accent)}
+.s-name{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-top:4px}
+.s-out{font-size:11.5px;line-height:1.5;color:var(--muted);margin-top:10px}
+.s-out .lab{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.s-what p{margin:0 0 10px;font-size:15px;line-height:1.55;color:var(--text);text-wrap:pretty}
+.s-what p:last-child{margin-bottom:0}
+.s-roles{display:flex;flex-direction:column;gap:14px}
+.role-block .lab{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.role-block p{margin:0 0 8px;font-size:14px;line-height:1.5;color:var(--text);text-wrap:pretty}
+.role-block p:last-child{margin-bottom:0}
+@media (max-width:960px){.colhead{display:none}.role-block::before{content:"My role";display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}.stage{grid-template-columns:1fr;gap:14px}.s-meta{flex-direction:row;align-items:baseline;gap:12px;flex-wrap:wrap}.s-out{margin-top:0;width:100%}}
+footer{border-top:1.5px solid var(--ink);padding:20px 0 60px;color:var(--muted);font-family:var(--mono);font-size:12px;line-height:1.6}
+footer a{border:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav">
+  <div class="brand"><a href="./">Braden Agpoon</a> <span>/ research director</span></div>
+  <ul>
+    <li><a href="./resume.html">Resume</a></li>
+    <li><a href="./project-history.html">Project History</a></li>
+    <li><a href="./process.html" class="on" aria-current="page">Process</a></li>
+    <li><a href="./ai-tooling.html">AI Tooling</a></li>
+  </ul>
+</nav>
+
+<header class="head">
+  <div>
+    <h1>Process</h1>
+    <p class="lede">I have spent seven years on this team, first as a junior and then a senior analyst, and since late 2022 as a research director. I have hundreds of repetitions of every stage below, both as the primary analyst and as the supervising director. Every custom survey project has a similar overall process, starting with the initial client conversation and leading to the readout of our completed research.</p><p class="lede">I scope the study, staff each stage, review everything before it reaches the client, and hold ultimate responsibility for every methodological decision. My team of analysts drafts the survey designs, programs and tests the surveys, oversees fielding, and produces the final analysis deliverable. Across my portfolio, I manage 20 to 25 projects at a time, each running eight to ten weeks.</p>
+  </div>
+  <nav class="toc" aria-label="Stages">
+    <span class="lab">10 stages</span>
+    <ol><li><a href="#stage-project-ideation"><span>01</span>Project ideation</a></li><li><a href="#stage-statement-of-work"><span>02</span>Statement of work</a></li><li><a href="#stage-survey-design"><span>03</span>Survey design</a></li><li><a href="#stage-client-feedback"><span>04</span>Client feedback</a></li><li><a href="#stage-programming"><span>05</span>Programming</a></li><li><a href="#stage-internal-testing"><span>06</span>Internal testing</a></li><li><a href="#stage-soft-launch-and-fielding"><span>07</span>Soft launch and fielding</a></li><li><a href="#stage-data-processing"><span>08</span>Data processing</a></li><li><a href="#stage-analysis"><span>09</span>Analysis</a></li><li><a href="#stage-delivery-and-presentation"><span>10</span>Delivery and presentation</a></li></ol>
+  </nav>
+</header>
+
+<main>
+  <div class="colhead"><div>Stage</div><div>What happens</div><div>My role</div></div>
+  
+  <section class="stage" id="stage-project-ideation">
+    <div class="s-meta mono">
+      <div class="s-num">01</div>
+      <div class="s-name">Project ideation</div>
+      <div class="s-out"><span class="lab">Produces</span>Preliminary research plan proposals, panel quotes, initial feasibility assessment</div>
+      
+    </div>
+    <div class="s-what"><p>Clients often arrive with a business problem rather than a research question, and sometimes with a survey already in mind. The research question comes out of conversation: what decision the work has to inform, who can actually be reached, and what the client would do differently depending on the answer.</p></div>
+    <div class="s-roles">
+      <div class="role-block"><p>I run the scoping calls and keep asking until I know what the research has to answer. Then I build a plan that can be fielded, with an audience we can reach at a sample and budget that work, and that will give the client findings they can act on. This requires repeatedly getting up to speed on a new client and their specific market fast enough to ask the right questions as early as possible.</p></div>
+    </div>
+  </section>
+  <section class="stage" id="stage-statement-of-work">
+    <div class="s-meta mono">
+      <div class="s-num">02</div>
+      <div class="s-name">Statement of work</div>
+      <div class="s-out"><span class="lab">Produces</span>Approved statement of work</div>
+      
+    </div>
+    <div class="s-what"><p>The statement of work is where the client and I agree in writing on the goals, the methodology, and the timeline. It covers the core objectives the study must answer, the sample (who we survey, how many, and in what mix), the analysis plan and deliverables, and the costs and schedule.</p></div>
+    <div class="s-roles">
+      <div class="role-block"><p>I write it and defend it with the client. It has to be detailed enough that an analyst can design a strong survey from it alone, and the key questions set here are the ones the final deck answers.</p></div>
+    </div>
+  </section>
+  <section class="stage" id="stage-survey-design">
+    <div class="s-meta mono">
+      <div class="s-num">03</div>
+      <div class="s-name">Survey design</div>
+      <div class="s-out"><span class="lab">Produces</span>Questionnaire for client review</div>
+      
+    </div>
+    <div class="s-what"><p>The questionnaire is drafted from the statement of work. Nearly every project requires a fully custom survey design, bespoke to the individual client and the decisions they hope to make based on the outcome of the research.</p></div>
+    <div class="s-roles">
+      <div class="role-block"><p>I set the direction using the statement of work, and my analyst builds it. We align on the overall approach up front, and I sign off on their outline before they write the full questionnaire. When the draft comes back, I review it question by question, make any needed edits, and produce the final client-facing version.</p></div>
+    </div>
+  </section>
+  <section class="stage" id="stage-client-feedback">
+    <div class="s-meta mono">
+      <div class="s-num">04</div>
+      <div class="s-name">Client feedback</div>
+      <div class="s-out"><span class="lab">Produces</span>Final questionnaire</div>
+      
+    </div>
+    <div class="s-what"><p>The client comments. Some changes are accepted, some pushed back on because they would break the analysis.</p></div>
+    <div class="s-roles">
+      <div class="role-block"><p>I read every comment for what it would do beyond the change itself: whether it breaks the survey's flow, leaves a key question unanswered, or makes the sample harder to reach. I decide what we can accept and where we must push back, draft the response, and make or delegate the updates before producing a client-facing revised survey design.</p></div>
+    </div>
+  </section>
+  <section class="stage" id="stage-programming">
+    <div class="s-meta mono">
+      <div class="s-num">05</div>
+      <div class="s-name">Programming</div>
+      <div class="s-out"><span class="lab">Produces</span>Programmed survey</div>
+      
+    </div>
+    <div class="s-what"><p>The questionnaire is built in the survey platform: questions, screener and quota logic, branching, randomization, embedded data, custom JavaScript and CSS as needed.</p></div>
+    <div class="s-roles">
+      <div class="role-block"><p>I tee up my analysts by pointing them to non-standard elements, such as branching screener and quota logic, dynamic audience-based text, and advanced methodology sections that require an additional third-party platform. After it's built, I review the programming execution against the final approved questionnaire to ensure readiness for the next stage.</p></div>
+    </div>
+  </section>
+  <section class="stage" id="stage-internal-testing">
+    <div class="s-meta mono">
+      <div class="s-num">06</div>
+      <div class="s-name">Internal testing</div>
+      <div class="s-out"><span class="lab">Produces</span>Final-for-fielding instrument</div>
+      
+    </div>
+    <div class="s-what"><p>Team members who were not involved in writing or programming the survey test it end to end, along every path a qualifying respondent could take.</p></div>
+    <div class="s-roles">
+      <div class="role-block"><p>I identify and assign testers, direct their attention to specific survey sections as needed, then review their feedback, implement any needed corrections or improvements, and sign off on the final instrument as ready for fielding.</p></div>
+    </div>
+  </section>
+  <section class="stage" id="stage-soft-launch-and-fielding">
+    <div class="s-meta mono">
+      <div class="s-num">07</div>
+      <div class="s-name">Soft launch and fielding</div>
+      <div class="s-out"><span class="lab">Produces</span>Complete dataset</div>
+      
+    </div>
+    <div class="s-what"><p>The survey goes live to a small first batch of respondents. We check that data against the questionnaire and the program to confirm the survey is working as designed, then launch in full and field until every quota is filled.</p></div>
+    <div class="s-roles">
+      <div class="role-block"><p>I coordinate between my team and our panel partners to initiate the soft launch, conduct a preliminary data quality inspection to catch any errors that slipped through programming and survey testing, declare the survey ready for full launch, then oversee the rest of fielding.</p></div>
+    </div>
+  </section>
+  <section class="stage" id="stage-data-processing">
+    <div class="s-meta mono">
+      <div class="s-num">08</div>
+      <div class="s-name">Data processing</div>
+      <div class="s-out"><span class="lab">Produces</span>Crosstabs, cleaned data, client dashboard</div>
+      
+    </div>
+    <div class="s-what"><p>The data is cleaned, segments are built, crosstabs with significance testing are produced, and a next-day interactive dashboard goes out to the client for quick data access while my team proceeds with deeper analysis.</p></div>
+    <div class="s-roles">
+      <div class="role-block"><p>I set the cleaning rules and segment definitions and review the crosstabs and dashboard before the client sees them.</p></div>
+    </div>
+  </section>
+  <section class="stage" id="stage-analysis">
+    <div class="s-meta mono">
+      <div class="s-num">09</div>
+      <div class="s-name">Analysis</div>
+      <div class="s-out"><span class="lab">Produces</span>Final report</div>
+      
+    </div>
+    <div class="s-what"><p>My team and I work through the data against the key questions from the statement of work to see what it says about the client's business question. Those insights are shaped into a storyline, which in turn shapes the report, usually a slide deck, sometimes a custom Power BI dashboard. The statement of work, the survey design, and fielding all build toward this point, a report written for senior stakeholders that leads with what the findings mean for their decision.</p></div>
+    <div class="s-roles">
+      <div class="role-block"><p>I set my analyst up with the key questions the report has to answer. When the draft comes back, I check the numbers against the crosstabs, then the writing, then the story. I decide what the story is and rework the draft where it hasn't found it yet.</p></div>
+    </div>
+  </section>
+  <section class="stage" id="stage-delivery-and-presentation">
+    <div class="s-meta mono">
+      <div class="s-num">10</div>
+      <div class="s-name">Delivery and presentation</div>
+      <div class="s-out"><span class="lab">Produces</span>Live readout, follow-on scope</div>
+      
+    </div>
+    <div class="s-what"><p>The findings are presented to the client's senior stakeholders in a live readout, followed by open discussion: what they should do next, whether a result could be read another way, and whether the method holds up. That conversation frequently leads to follow-on analysis of the same dataset or to a new study that builds on this one.</p></div>
+    <div class="s-roles">
+      <div class="role-block"><p>I lead the presentation and field every question, from interpretation to methodology, which depends on knowing the study well enough to answer on the spot. When the discussion turns to next steps, I scope the follow-on work with the client and direct my team on any additional analysis.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer><a href="./">Home</a> · <a href="./resume.html">Resume</a> · <a href="./project-history.html">Project History</a> · <a href="./ai-tooling.html">AI Tooling</a></footer>
+</div>
+</body>
+</html>
